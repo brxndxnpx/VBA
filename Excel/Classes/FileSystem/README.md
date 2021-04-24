@@ -52,3 +52,48 @@ The `DownloadDocument` method requires the [DynamicLinkLibraries.bas](../../../E
 - This method can be removed otherwise.
 
 ---
+
+## Usage
+
+This will get all files on the user's desktop (not files in sub-folders) and prints them to the immediate window.
+- The `Desktop` function is referenced in [Environment.bas](../../../Excel/Modules/Environment/Environment.bas).
+
+With [Environment.bas](../../../Excel/Modules/Environment/Environment.bas).
+
+```vb
+Private Sub Demo()
+    Dim FS As New FileSystem
+    Dim files_ As Variant
+    Dim i As Long
+    
+    ' Gets the file names on the user's desktop
+    files_ = FS.GetFilesInFolder(Desktop, False)
+    
+    For i = LBound(files_) To UBound(files_)
+        Debug.Print files_(i).Name
+    Next
+End Sub
+```
+
+Without [Environment.bas](../../../Excel/Modules/Environment/Environment.bas).
+
+```vb
+Private Sub Demo()
+    Dim FS As New FileSystem
+    Dim files_ As Variant
+    Dim i As Long
+    Dim desktop_ As String
+
+    ' Checks if the user is using OneDrive
+    '   If true, then use the Desktop folder in the user's OneDrive folder.
+    '   Otherwise use the default windows Desktop folder.
+    desktop_ = FS.BuildPath(IIf(Environ$("OneDrive") <> vbNullString, Environ$("OneDrive"), Environ$("UserProfile")), "Desktop")
+    
+    ' Gets the file names on the user's desktop
+    files_ = FS.GetFilesInFolder(desktop_, False)
+    
+    For i = LBound(files_) To UBound(files_)
+        Debug.Print files_(i).Name
+    Next
+End Sub
+```
