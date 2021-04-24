@@ -14,10 +14,12 @@ An Acrobat class that is used to combine PDFs and convert files (e.g. images) to
 
 ## Methods/Functions
 
-| Method/Functions | Description                                      |
-|------------------|--------------------------------------------------|
-| MergeDocuments   | Merges an array of file paths into a single PDF. |
-| ConvertToPDF     | Converts a file to a PDF.                        |
+| Method/Functions | Type     | Description                                      | Returns                                    |
+|------------------|----------|--------------------------------------------------|--------------------------------------------|
+| MergeDocuments   | Method   | Merges an array of file paths into a single PDF. |                                            |
+| ConvertToPDF     | Function | Converts a file to a PDF.                        | `String`: The converted PDF's file path. |
+
+- `MergeDocuments` can be turned into a function to also return the file path of the merged document.
 
 ---
 

@@ -20,36 +20,40 @@ Dependencies:
 
 ## Methods/Functions
 
-| Method/Functions   | Description                                                                                                                                  |
-|--------------------|----------------------------------------------------------------------------------------------------------------------------------------------|
-| FileExists         | Checks if a file exists.                                                                                                                     |
-| FolderExists       | Checks if a folder exists.                                                                                                                   |
-| GetFilesInFolder   | Gets all of the file paths in a directory. Has an optional parameter for retrieving items in sub-folders.                                    |
-| SelectFile         | Selects a file and gets it's path.                                                                                                           |
-| SelectFolder       | Selects a folder and gets it's path.                                                                                                         |
-| GetFileName        | Gets a file's name.                                                                                                                          |
-| GetFolderName      | Gets a folder's name.                                                                                                                        |
-| GetFile            | Gets a file as an `Object`.                                                                                                                  |
-| GetFolder          | Gets a folder as an `Object`.                                                                                                                |
-| GetExtension       | Gets the file extension from a file path                                                                                                     |
-| BuildPath          | Combines paths. This is the same as the `Environment.PathCombine()` function.                                                                |
-| AddFolder          | Adds a folder to an **existing** folder. Returns the new folder's path.                                                                      |
-| CreateFolder       | Creates a folder.                                                                                                                            |
-| DeleteFile         | Deletes a file. Returns true if the file was successfully deleted.                                                                           |
-| DeleteFolder       | Deletes a folder. Returns true if the folder was successfully deleted.                                                                       |
-| IsFolderEmpty      | Checks if a folder is empty.                                                                                                                 |
-| MoveFile           | Moves a file.                                                                                                                                |
-| MoveFolder         | Moves a folder.                                                                                                                              |
-| CreateTextFile     | Creates a text file.                                                                                                                         |
-| WriteToTextFile    | Writes to an existing/instantiated text file object.                                                                                         |
-| DownloadDocument * | Downloads a document from a path or URL.                                                                                                     |
-| GetSpecialFolder   | Gets a special folder's path by it's index. e.g. 0 = System Root; 1 = System Folder; 2 = Temp Folder. * Environ can usually be used instead. |
-| CopyFile           | Copies a file.                                                                                                                               |
-| CopyFolder         | Copies a folder.                                                                                                                             |
-| IsFileOpen         | Checks if a file is opened/locked by another application.                                                                                    |
+| Method/Functions   | Type     | Description                                                                                               | Returns                                                                       |
+|--------------------|----------|-----------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------|
+| FileExists         | Function | Checks if a file exists.                                                                                  | `Boolean`: True if exists.                                                    |
+| FolderExists       | Function | Checks if a folder exists.                                                                                | `Boolean`: True if exists.                                                    |
+| GetFilesInFolder   | Function | Gets all of the file paths in a directory. Has an optional parameter for retrieving items in sub-folders. | `Variant`: An array of objects of the `Scripting.FileSystemObject.File` type. |
+| SelectFile         | Function | Selects a file and gets it's path.                                                                        | `String`: The object's path.                                                  |
+| SelectFolder       | Function | Selects a folder and gets it's path.                                                                      | `String`: The object's path.                                                  |
+| GetFileName        | Function | Gets a file's name.                                                                                       | `String`: The object's name.                                                  |
+| GetFolderName      | Function | Gets a folder's name.                                                                                     | `String`: The object's name.                                                  |
+| GetFile            | Function | Gets a file as an `Object`.                                                                               | `Object`: The file as a `Scripting.FileSystemObject.File` type.               |
+| GetFolder          | Function | Gets a folder as an `Object`.                                                                             | `Object`: The folder as a `Scripting.FileSystemObject.Folder` type.           |
+| GetExtension       | Function | Gets the file extension from a file path                                                                  | `String`: The file's extension.                                               |
+| BuildPath          | Function | Combines paths. This is the same as the `Environment.PathCombine()` function.                             | `String`: The combined file path.                                             |
+| AddFolder          | Function | Adds a folder to an **existing** folder.                                                                  | `String`: The new folder's path.                                              |
+| CreateFolder       | Method   | Creates a folder.                                                                                         |                                                                               |
+| DeleteFile         | Function | Deletes a file.                                                                                           | `Boolean`: True if the file was successfully deleted.                         |
+| DeleteFolder       | Function | Deletes a folder.                                                                                         | `Boolean`: True if the folder was successfully deleted.                       |
+| IsFolderEmpty      | Function | Checks if a folder is empty.                                                                              | `Boolean`: True if there aren't any files in the folder.                      |
+| MoveFile           | Method   | Moves a file.                                                                                             |                                                                               |
+| MoveFolder         | Method   | Moves a folder.                                                                                           |                                                                               |
+| CreateTextFile     | Function | Creates a text file.                                                                                      | `Object`: A `TextStream` object.                                              |
+| WriteToTextFile    | Function | Writes to an existing/instantiated text file object.                                                      |                                                                               |
+| DownloadDocument * | Function | Downloads a document from a path or URL.                                                                  |                                                                               |
+| GetSpecialFolder   | Function | Gets a special folder's path by it's index.                                                               |                                                                               |
+| CopyFile           | Function | Copies a file.                                                                                            |                                                                               |
+| CopyFolder         | Function | Copies a folder.                                                                                          |                                                                               |
+| IsFileOpen         | Function | Checks if a file is opened/locked by another application.                                                 |                                                                               |
 
 The `DownloadDocument` method requires the [DynamicLinkLibraries.bas](../../../Excel/Modules/DynamicLinkLibraries/DynamicLinkLibraries.bas) to be included in the project.
 - This method can be removed otherwise.
+
+The `GetSpecialFolder` uses a numbered index.
+- e.g. 0 = System Root; 1 = System Folder; 2 = Temp Folder. 
+- The native `Environ()` or `Environ$()` can usually be used instead.
 
 ---
 
