@@ -2,8 +2,6 @@
 
 Performs basic reads and writes text to files without creating a `TextStream` object.
 
-Excel\Modules\Environment\Environment.bas
-
 Recommended to be used in conjunction with the [Environment.bas](/VBXL/Modules/Environment/Environment.bas) module for easier file path access.
 
 Recommended to be used in conjunction with the [FileSystem.cls](/VBXL/Classes/FileSystem/FileSystem.cls) class for easier file access.
