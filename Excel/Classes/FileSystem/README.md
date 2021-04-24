@@ -7,8 +7,8 @@ Allows using the `Scripting.FileSystemObject` object with intellisense without h
 - This will alleviate that issue by using late-binding.
 
 Recommended to be used in conjunction with the [Environment.bas](../../../Excel/Modules/Environment/Environment.bas) module for easier file path access.
-Recommended to be used in conjunction with the [DynamicLinkLibraries.bas](../../../Excel/Modules/DynamicLinkLibraries/DynamicLinkLibraries.bas) module for downloading documents via URL.
 
+Recommended to be used in conjunction with the [DynamicLinkLibraries.bas](../../../Excel/Modules/DynamicLinkLibraries/DynamicLinkLibraries.bas) module for downloading documents via URL.
 
 Dependencies:
 [DynamicLinkLibraries.bas](../../../Excel/Modules/DynamicLinkLibraries/DynamicLinkLibraries.bas)
