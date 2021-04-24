@@ -1,6 +1,7 @@
 # ColorInfo
 
 A color class that contains metadata for RGB, hex, and Microsoft Office's integer (`Long` datatype) color code.
+
 The color information will change in sync with the last updated property.
 - For example, if the R value in RGB were to change, then the `HexCode` and `ColorCode` properties will also change to match the new color's value.
 - If the `HexCode` were to change then the RGB values and `ColorCode` values will also change to match the new color's value.
