@@ -11,7 +11,8 @@ Option Explicit
 
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 ''' Module Summary
-'''   A late binding wrapper class for the Scripting.Dictionary object. Allow using the Scripting.Dictionary object with intellisense.
+'''   A late binding wrapper class for the Scripting.Dictionary object.
+'''   Allows using the Scripting.Dictionary object with intellisense without having to add a reference.
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
 Private Const AppPID As String = "Scripting.Dictionary"

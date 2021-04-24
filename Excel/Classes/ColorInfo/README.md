@@ -13,7 +13,7 @@ This class/object is primarily used to convert colors, e.g. from RGB to hex.
 
 ## Properties
 
-| Property  | Type     |                                     |
+| Property  | Type     | Description                         |
 |-----------|----------|-------------------------------------|
 | ColorCode | `Long`   | The Excel color code for the color. |
 | HexCode   | `String` | The hex code for the color.         |
