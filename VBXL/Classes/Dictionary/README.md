@@ -22,15 +22,15 @@ You can also store other objects in the dictionary.
 
 ## Methods/Functions
 
-| Method/Functions | Description                                    |
-|------------------|------------------------------------------------|
-| Add              | Adds an item to the dictionary.                |
-| Replace          | Replaces an item at a key with a another item. |
-| GetItem          | Gets an item by it's key.                      |
-| GetKey           | Gets a key by it's item.                       |
-| Exists           | Checks if a key exists.                        |
-| Remove           | Removes an item.                               |
-| RemoveAll        | Removes all items.                             |
+| Method/Functions | Type     | Description                                    | Returns                            |
+|------------------|----------|------------------------------------------------|------------------------------------|
+| Add              | Method   | Adds an item to the dictionary.                |                                    |
+| Replace          | Method   | Replaces an item at a key with a another item. |                                    |
+| GetItem          | Function | Gets an item by it's key.                      | Type will vary. The item.          |
+| GetKey           | Function | Gets a key by it's item.                       | Type will vary. The item's key.    |
+| Exists           | Function | Checks if a key exists.                        | `Boolean`: True if the key exists. |
+| Remove           | Method   | Removes an item.                               |                                    |
+| RemoveAll        | Method   | Removes all items.                             |                                    |
 
 ---
 
