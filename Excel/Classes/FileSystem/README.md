@@ -56,7 +56,7 @@ The `DownloadDocument` method requires the [DynamicLinkLibraries.bas](../../../E
 ## Usage
 
 This will get all files on the user's desktop (not files in sub-folders) and prints them to the immediate window.
-- The `Desktop` function is referenced in [Environment.bas](../../../Excel/Modules/Environment/Environment.bas).
+- The `Desktop` function used below is referenced in [Environment.bas](../../../Excel/Modules/Environment/Environment.bas).
 
 With [Environment.bas](../../../Excel/Modules/Environment/Environment.bas).
 
@@ -67,7 +67,7 @@ Private Sub Demo()
     Dim i As Long
     
     ' Gets the file names on the user's desktop
-    files_ = FS.GetFilesInFolder(Desktop, False)
+    files_ = FS.GetFilesInFolder(Environment.Desktop, False)
     
     For i = LBound(files_) To UBound(files_)
         Debug.Print files_(i).Name
