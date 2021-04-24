@@ -6,8 +6,7 @@ Allows using the `Scripting.FileSystemObject` object with intellisense without h
 - Other users may not have the `Scripting` library added in their Visual Basic Editor. 
 - This will alleviate that issue by using late-binding.
 
-Recommended to be used in conjunction with the [Environment.bas](..\..\Excel\Modules\Environment\Environment.bas) module for easier file path access.
-
+Recommended to be used in conjunction with the [Environment.bas](../../../Excel/Modules/Environment/Environment.bas) module for easier file path access.
 
 
 ---
