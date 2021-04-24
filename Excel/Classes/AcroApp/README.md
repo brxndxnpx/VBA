@@ -1,4 +1,4 @@
-# ColorInfo
+# AcroApp
 
 An Acrobat class that is used to combine PDFs and convert files (e.g. images) to PDFs.
 
@@ -30,7 +30,7 @@ This sub routine will...
 2. Convert those files to PDFs.
 3. Merge the converted PDFs into a single PDF document.
 4. Open the merged PDF.
-- You will likely see a warning prompt because it's following a hyperlink.
+    - You will likely see a warning prompt because it's following a hyperlink.
 5. Delete the individual text and PDFs files.
 6. Display a message to notify the user to delete the merged PDF in their temp folder.
 7. Open their temp folder for them.
