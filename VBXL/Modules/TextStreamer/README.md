@@ -4,11 +4,11 @@ Performs basic reads and writes text to files without creating a `TextStream` ob
 
 Excel\Modules\Environment\Environment.bas
 
-Recommended to be used in conjunction with the [Environment.bas](../../../VBXL/Modules/Environment/Environment.bas) module for easier file path access.
+Recommended to be used in conjunction with the [Environment.bas](/VBXL/Modules/Environment/Environment.bas) module for easier file path access.
 
-Recommended to be used in conjunction with the [FileSystem.cls](../../../VBXL/Classes/FileSystem/FileSystem.cls) class for easier file access.
+Recommended to be used in conjunction with the [FileSystem.cls](/VBXL/Classes/FileSystem/FileSystem.cls) class for easier file access.
 
-Recommended to be used in conjunction with the [StringBuilder.cls](../../../VBXL/Classes/StringBuilder/StringBuilder.cls) class for easier text readability.
+Recommended to be used in conjunction with the [StringBuilder.cls](/VBXL/Classes/StringBuilder/StringBuilder.cls) class for easier text readability.
 - You can use the `StringBuilder.AppendArray()` to inject the text array into the `StringBuilder` object when reading a file.
 
 ---

@@ -6,13 +6,13 @@ Allows using the `Scripting.FileSystemObject` object with intellisense without h
 - Other users may not have the `Scripting` library added in their Visual Basic Editor. 
 - This will alleviate that issue by using late-binding.
 
-Recommended to be used in conjunction with the [Environment.bas](../../../VBXL/Modules/Environment/Environment.bas) module for easier file path access.
+Recommended to be used in conjunction with the [Environment.bas](/VBXL/Modules/Environment/Environment.bas) module for easier file path access.
 
-Recommended to be used in conjunction with the [DynamicLinkLibraries.bas](../../../VBXL/Modules/DynamicLinkLibraries/DynamicLinkLibraries.bas) module for downloading documents via URL.
+Recommended to be used in conjunction with the [DynamicLinkLibraries.bas](/VBXL/Modules/DynamicLinkLibraries/DynamicLinkLibraries.bas) module for downloading documents via URL.
 
 Dependencies:
-[DynamicLinkLibraries.bas](../../../VBXL/Modules/DynamicLinkLibraries/DynamicLinkLibraries.bas)
-- The `DownloadDocument` method requires the [DynamicLinkLibraries.bas](../../../VBXL/Modules/DynamicLinkLibraries/DynamicLinkLibraries.bas) to be included in the project.
+[DynamicLinkLibraries.bas](/VBXL/Modules/DynamicLinkLibraries/DynamicLinkLibraries.bas)
+- The `DownloadDocument` method requires the [DynamicLinkLibraries.bas](/VBXL/Modules/DynamicLinkLibraries/DynamicLinkLibraries.bas) to be included in the project.
     - This method can be removed otherwise.
 
 
@@ -60,9 +60,9 @@ The `GetSpecialFolder` uses a numbered index.
 ## Usage
 
 This will get all files on the user's desktop (not files in sub-folders) and prints them to the immediate window.
-- The `Desktop` function used below is referenced in [Environment.bas](../../../VBXL/Modules/Environment/Environment.bas).
+- The `Desktop` function used below is referenced in [Environment.bas](/VBXL/Modules/Environment/Environment.bas).
 
-With [Environment.bas](../../../VBXL/Modules/Environment/Environment.bas).
+With [Environment.bas](/VBXL/Modules/Environment/Environment.bas).
 
 ```vb
 Private Sub Demo()
@@ -79,7 +79,7 @@ Private Sub Demo()
 End Sub
 ```
 
-Without [Environment.bas](../../../VBXL/Modules/Environment/Environment.bas).
+Without [Environment.bas](/VBXL/Modules/Environment/Environment.bas).
 
 ```vb
 Private Sub Demo()
