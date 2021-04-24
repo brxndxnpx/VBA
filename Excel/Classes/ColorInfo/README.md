@@ -1,9 +1,12 @@
 # ColorInfo
 
-A color class that contains metadata for RGB, hex, and Microsoft Office's integer (long) color code.
+A color class that contains metadata for RGB, hex, and Microsoft Office's integer (`Long` datatype) color code.
 The color information will change in sync with the last updated property.
 - For example, if the R value in RGB were to change, then the `HexCode` and `ColorCode` properties will also change to match the new color's value.
 - If the `HexCode` were to change then the RGB values and `ColorCode` values will also change to match the new color's value.
+
+This class/object is primarily used to convert colors, e.g. from RGB to hex.
+- Of course, the methods/functions in the class object can also be set as functions in a module.
 
 ---
 
@@ -27,7 +30,7 @@ The color information will change in sync with the last updated property.
 You can set the color in 3 ways.
 1. Hex code, e.g. `#FFFFFF` for white.
 0. RGB values, e.g. `255`, `255`, `255` for white.
-    - Unfortunately VBA doesn't support passing values through the constructors.
+    - Unfortunately VBA doesn't support passing values through constructors.
     - This is set using the `ColorInfo.SetRGBValues()` method.
 0. Microsoft Office color codes, e.g. `16777215` for white.
 
@@ -65,7 +68,7 @@ End Sub
 
 ### Getting The Color
 
-Once a color is set, then you can get the color by accessing it's property.
+You can get the color by accessing it's property once a color is set.
 
 ```vb
 Private Sub Demo()
