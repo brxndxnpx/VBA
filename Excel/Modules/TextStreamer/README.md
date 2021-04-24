@@ -9,7 +9,7 @@ Recommended to be used in conjunction with the [Environment.bas](../../../Excel/
 Recommended to be used in conjunction with the [FileSystem.cls](../../../Excel/Classes/FileSystem/FileSystem.cls) class for easier file access.
 
 Recommended to be used in conjunction with the [StringBuilder.cls](../../../Excel/Classes/StringBuilder/StringBuilder.cls) class for easier text readability.
-- You can use the `StringBuilder.AppendArray()` to inject the text into the `StringBuilder` object.
+- You can use the `StringBuilder.AppendArray()` to inject the text array into the `StringBuilder` object.
 
 ---
 
