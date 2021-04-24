@@ -2,6 +2,11 @@
 
 Late-bound objects created for easing VBA development.
 
+I tried to decouple these objects as much as I could for individual classes or modules to be usable.
+- There may still be dependencies since some classes work better with some modules.
+- e.g. The `FileSystem` class works well with the `Environment` module for easy path access.
+
+
 # AcroApp
 
 An Acrobat class that is used to combine PDFs and convert files (e.g. images) to PDFs.
