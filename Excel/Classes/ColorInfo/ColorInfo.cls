@@ -18,7 +18,7 @@ Private this  As TColorInfo
 
 
 ''' Summary:
-'''     The Excel color code for the RGB values
+'''     The Excel color code for the color.
 Public Property Get ColorCode() As Long: ColorCode = this.ColorCode: End Property
 Public Property Let ColorCode(ByVal Value As Long): this.ColorCode = Value: SetFromColorCode: End Property
 
@@ -38,7 +38,7 @@ Public Property Get B() As Long: B = this.B: End Property
 Public Property Let B(ByVal Value As Long): this.B = Value: SetFromRGB: End Property
 
 ''' Summary:
-'''     The hex code for the RGB color
+'''     The hex code for the color.
 Public Property Get HexCode() As String: HexCode = this.HexCode: End Property
 Public Property Let HexCode(ByVal Value As String): this.HexCode = Value: SetFromHexCode: End Property
 
