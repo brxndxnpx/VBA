@@ -1,6 +1,6 @@
 # TextStreamer
 
-Performs basic reads and writes text to files without creating a `TextStream` object.
+Performs basic reads and writes text to files without creating a `Scripting.TextStream` object.
 
 Recommended to be used in conjunction with the [Environment.bas](/VBXL/Modules/Environment/Environment.bas) module for easier file path access.
 
