@@ -1,4 +1,3 @@
-'@Folder "TMMAP_VBXL.Class Objects.General.Scripting"
 Option Explicit
 
 Private Const AppPID As String = "Scripting.FileSystemObject"
@@ -196,23 +195,6 @@ Public Function GetExtension(ByRef Path As Variant, Optional ByRef IncludePeriod
     Dim ext   As String: ext = FS.GetExtensionName(Path)
     If ext = vbNullString Then GetExtension = vbNullString Else: GetExtension = IIf(IncludePeriod, "." & ext, ext)
 End Function
-
-'''' Summary
-''''     Combines up to 9 paths
-'Public Function BuildPath(ByRef path1 As String, ByRef path2 As String, Optional ByRef path3 As String, Optional ByRef path4 As String, Optional ByRef path5 As String, Optional ByRef path6 As String, Optional ByRef path7 As String, Optional ByRef path8 As String, Optional ByRef path9 As String) As String
-'      Dim output As String: output = FS.BuildPath(path1, path2)
-'
-'      If path3 <> vbNullString Then output = FS.BuildPath(output, path3)
-'      If path4 <> vbNullString Then output = FS.BuildPath(output, path4)
-'      If path5 <> vbNullString Then output = FS.BuildPath(output, path5)
-'      If path6 <> vbNullString Then output = FS.BuildPath(output, path6)
-'      If path7 <> vbNullString Then output = FS.BuildPath(output, path7)
-'      If path8 <> vbNullString Then output = FS.BuildPath(output, path8)
-'      If path9 <> vbNullString Then output = FS.BuildPath(output, path9)
-'
-'      BuildPath = output
-'End Function
-
 
 ''' Summary
 '''     Combines paths
