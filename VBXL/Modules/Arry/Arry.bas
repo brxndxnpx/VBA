@@ -6,22 +6,6 @@ Option Private Module
 '''     Array helper functions.
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
-Private Sub TestArrayExtensions()
-    Dim Source As Variant
-    
-    Dim example_String   As String
-    Dim example_Integer  As Long
-    Dim example_Object   As Object
-    
-    example_String = "HELLO WORLD"
-    example_Integer = 1090
-    Set example_Object = CreateObject("Scripting.Dictionary")
-    
-    ArryAppend Source, example_String, example_Integer, example_Object
-    ArryRemove Source, 2
-    ArryDebug Source
-End Sub
-
 ''' Summary:
 '''     Appends items to an array.
 ''' Parameters:

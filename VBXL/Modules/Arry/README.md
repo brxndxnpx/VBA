@@ -21,7 +21,7 @@ Appends items to an array.
 **Parameters**
 - `Source` `ByRef`
     - The array to append.
-- `Items()` `ByRef`
+- `Items()` `ByRef` `ParamArray`
     - The item(s) to append to the source.
 
 ---
