@@ -81,7 +81,7 @@ Private Sub Demo()
     Dim pdf_files_  As Variant
     Dim i           As Long
     
-    ' Set the name of the file that's to be created
+    ' Set the name of the example files that are to be created
     basename_ = "Sample Example File"
     
     ' Create a file system object to build the file path and create the text file
