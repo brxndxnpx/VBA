@@ -21,7 +21,7 @@ An Acrobat class that is used to combine PDFs and convert files (e.g. images) to
 
 ---
 
-### [`PDFCombine`](AcroApp.cls#L74)
+### [`PDFCombine`](AcroApp.cls#L76)
 
 Combines an array of file paths into a single PDF.
 
@@ -40,7 +40,7 @@ The files must be PDFs.
 
 ---
 
-### [`ConvertToPDF`](AcroApp.cls#L158)
+### [`ConvertToPDF`](AcroApp.cls#L162)
 
 Converts a file to a PDF.
 
