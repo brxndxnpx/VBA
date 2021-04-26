@@ -2,7 +2,7 @@
 
 Array helper functions.
 
-## Methods/Functions
+## Methods & Functions
 
 |                             | Description                                                                                                         |
 |-----------------------------|---------------------------------------------------------------------------------------------------------------------|
@@ -12,11 +12,9 @@ Array helper functions.
 | [`ArryCount`](#arrycount)   | Counts the items in an array.                                                                                       |
 | [`ArryDebug`](#arrydebug)   | Uses `Debug.Print` to print the values of the items in the array along with it's data type to the immediate window. |
 
-
+---
 
 ### `ArryAppend`
-
-**Method**
 
 Appends items to an array.
 
@@ -29,8 +27,6 @@ Appends items to an array.
 ---
 
 ### `ArryResize`
-
-**Method**
 
 Resizes an array. Will instantiate a new array if the array is empty.
 
@@ -46,8 +42,6 @@ Resizes an array. Will instantiate a new array if the array is empty.
 
 ### `ArryRemove`
 
-**Method**
-
 Removes an item from an array and resizes it.
 
 **Parameters**
@@ -61,8 +55,6 @@ Removes an item from an array and resizes it.
 
 ### `ArryCount`
 
-**Function**
-
 Counts the items in an array.
 
 **Parameters**
@@ -70,17 +62,11 @@ Counts the items in an array.
     - The array to reference.
 
 **Returns**
-
-Type: `Long`
-
-The number of items in the array.
-
+- The number of items in the array. `Long`
 
 ---
 
 ### `ArryDebug`
-
-**Method**
 
 Uses `Debug.Print` the print values of the items in the array along with it's data type to the immediate window.
 
