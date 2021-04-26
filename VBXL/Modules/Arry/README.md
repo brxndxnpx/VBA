@@ -73,3 +73,34 @@ Uses `Debug.Print` the print values of the items in the array along with it's da
 **Parameters**
 - `Source` `ByRef`
     - The array to reference.
+
+---
+
+## Usage
+
+```vb
+Private Sub Demo()
+    Dim Source           As Variant
+    Dim example_String   As String
+    Dim example_Integer  As Long
+    Dim example_Object   As Object
+    
+    ' Set the example variables
+    example_String = "HELLO WORLD"
+    example_Integer = 1090
+    Set example_Object = CreateObject("Scripting.Dictionary")
+    
+    ' Append the variables to the array (Source)
+    ArryAppend Source, example_String, example_Integer, example_Object
+
+    ' Remove the item at the 2nd index: example_Integer
+    ArryRemove Source, 2
+
+    ' Print the items to the immediate window
+    ArryDebug Source
+
+    ' Prints:
+    '   String        HELLO WORLD
+    '   Object        Dictionary    
+End Sub
+```
