@@ -14,18 +14,18 @@ An Acrobat class that is used to combine PDFs and convert files (e.g. images) to
 
 ## Methods/Functions
 
-|                                                                      | Description                                      |
-|----------------------------------------------------------------------|--------------------------------------------------|
-| [`PDFCombine`](#pdfcombine)<sub>[Ref](AcroApp.cls#L74)</sub> | Merges an array of file paths into a single PDF. |
-| [`ConvertToPDF`](#converttopdf)<sub>[Ref](AcroApp.cls#L158)</sub>    | Converts a file to a PDF.                        |
+|                                 | Description                                      |
+|---------------------------------|--------------------------------------------------|
+| [`PDFCombine`](#pdfcombine)     | Merges an array of file paths into a single PDF. |
+| [`ConvertToPDF`](#converttopdf) | Converts a file to a PDF.                        |
 
 ---
 
-### `PDFCombine` 
+### [`PDFCombine`](AcroApp.cls#L74)
 
-Merges an array of file paths into a single PDF.
+Combines an array of file paths into a single PDF.
 
-Can be turned into a function to return the file path of the merged document.
+The files must be PDFs.
 
 **Parameters**
 - `FileName` `ByRef`
@@ -40,7 +40,7 @@ Can be turned into a function to return the file path of the merged document.
 
 ---
 
-### `ConvertToPDF` 
+### [`ConvertToPDF`](AcroApp.cls#L158)
 
 Converts a file to a PDF.
 
@@ -68,17 +68,17 @@ This sub routine will...
 
 ```vb
 Private Sub Demo()
-    Dim AC As New AcroApp
-    Dim filename_ As String
-    Dim FS As Object
-    Dim filepath_ As String
-    Dim writeText_ As String
-    Dim i As Long
-    Dim textStream As Object
-    Dim temp_ As String
-    Dim mergedPDF_ As String
-    Dim files_ As Variant
-    Dim pdfs_ As Variant
+    Dim AC          As New AcroApp
+    Dim filename_   As String
+    Dim FS          As Object
+    Dim filepath_   As String
+    Dim writeText_  As String
+    Dim i           As Long
+    Dim textStream  As Object
+    Dim temp_       As String
+    Dim mergedPDF_  As String
+    Dim files_      As Variant
+    Dim pdfs_       As Variant
     
     ' Set the name of the file that's to be created
     'filename_ = "Sample Text File.txt"

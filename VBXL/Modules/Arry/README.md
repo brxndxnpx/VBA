@@ -14,7 +14,7 @@ Array helper functions.
 
 ---
 
-### `ArryAppend`
+### [`ArryAppend`](Arry.bas#L14)
 
 Appends items to an array.
 
@@ -26,7 +26,7 @@ Appends items to an array.
 
 ---
 
-### `ArryResize`
+### [`ArryResize`](Arry.bas#L14)
 
 Resizes an array. Will instantiate a new array if the array is empty.
 
@@ -40,7 +40,7 @@ Resizes an array. Will instantiate a new array if the array is empty.
 
 ---
 
-### `ArryRemove`
+### [`ArryRemove`](Arry.bas#L53)
 
 Removes an item from an array and resizes it.
 
@@ -53,7 +53,7 @@ Removes an item from an array and resizes it.
 ---
 
 
-### `ArryCount`
+### [`ArryCount`](Arry.bas#L73)
 
 Counts the items in an array.
 
@@ -66,7 +66,7 @@ Counts the items in an array.
 
 ---
 
-### `ArryDebug`
+### [`ArryDebug`](Arry.bas#L85)
 
 Uses `Debug.Print` the print values of the items in the array along with it's data type to the immediate window.
 

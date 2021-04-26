@@ -64,7 +64,7 @@ Private Sub Class_Terminate()
 End Sub
 
 ''' Summary:
-'''     Merges an array of file paths into a single PDF
+'''     Combines an array of file paths into a single PDF. The files must be PDFs.
 ''' Parameters:
 '''     ByRef FileName: The finalized PDF file name. The extension isn't required.
 '''     ByRef Items: The array of PDFs to merge. Consists of full file paths.
