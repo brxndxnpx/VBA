@@ -43,19 +43,19 @@ End Sub
 '''     Resizes an array. Will instantiate a new array if the array is empty.
 ''' Parameters:
 '''     ByRef Source: The array to resize.
-'''     ByVal Optional AddedUBound: The number of additional upper bound dimensions to add to the source.
+'''     ByVal Optional AddedBounds: The number of additional upper bound dimensions to add to the source.
 '''     ByVal Optional PreserveData: Whether or not to preserve the data in the source.
-Public Sub ArryResize(ByRef Source As Variant, Optional ByVal AddedUBound As Long = 1, Optional ByVal PreserveData As Boolean = True)
+Public Sub ArryResize(ByRef Source As Variant, Optional ByVal AddedBounds As Long = 1, Optional ByVal PreserveData As Boolean = True)
     If IsEmpty(Source) Then
-        ReDim Source(1 To AddedUBound)
+        ReDim Source(1 To AddedBounds)
     Else
         If UBound(Source) = -1 Then
-            ReDim Source(1 To AddedUBound)
+            ReDim Source(1 To AddedBounds)
         Else
             If Not PreserveData Then
-                ReDim Source(1 To UBound(Source) + AddedUBound)
+                ReDim Source(1 To UBound(Source) + AddedBounds)
             Else
-                ReDim Preserve Source(1 To UBound(Source) + AddedUBound)
+                ReDim Preserve Source(1 To UBound(Source) + AddedBounds)
             End If
         End If
     End If
