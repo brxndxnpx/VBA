@@ -14,12 +14,43 @@ An Acrobat class that is used to combine PDFs and convert files (e.g. images) to
 
 ## Methods/Functions
 
-| Method/Functions | Type     | Description                                      | Returns                                    |
-|------------------|----------|--------------------------------------------------|--------------------------------------------|
-| MergeDocuments   | Method   | Merges an array of file paths into a single PDF. |                                            |
-| ConvertToPDF     | Function | Converts a file to a PDF.                        | `String`: The converted PDF's file path. |
+|                                                                      | Description                                      |
+|----------------------------------------------------------------------|--------------------------------------------------|
+| [`PDFCombine`](#pdfcombine)<sub>[Ref](AcroApp.cls#L74)</sub> | Merges an array of file paths into a single PDF. |
+| [`ConvertToPDF`](#converttopdf)<sub>[Ref](AcroApp.cls#L158)</sub>    | Converts a file to a PDF.                        |
 
-- `MergeDocuments` can be turned into a function to also return the file path of the merged document.
+---
+
+### `PDFCombine` 
+
+Merges an array of file paths into a single PDF.
+
+Can be turned into a function to return the file path of the merged document.
+
+**Parameters**
+- `FileName` `ByRef`
+    - The finalized PDF file name. The extension isn't required.
+- `Items` `ByRef`
+    - The array of PDFs to merge. Consists of full file paths.
+- `OutputDirectory` `ByRef`
+    - The output directory to save the merged PDF to.
+
+**Returns**
+- A `String`; The combined PDF's file path.
+
+---
+
+### `ConvertToPDF` 
+
+Converts a file to a PDF.
+
+**Parameters**
+- `Path` `ByRef`
+    - The full file path of the file to convert.
+
+**Returns**
+- A `String`; The converted file's PDF path.
+
 
 ---
 
@@ -96,7 +127,7 @@ Private Sub Demo()
     mergedPDF_ = FS.BuildPath(temp_, "Sample PDF File.pdf")
     
     ' Merge the PDFs into 1 document
-    AC.MergeDocuments "Sample PDF File", pdfs_, temp_
+    AC.PDFCombine "Sample PDF File", pdfs_, temp_
     
     ' Open the PDF
     ActiveWorkbook.FollowHyperlink mergedPDF_

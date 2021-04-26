@@ -68,6 +68,8 @@ End Sub
 '''     Counts the items in an array.
 ''' Parameters:
 '''     ByRef Source: The array to reference.
+''' Returns:
+'''     A Long; The number of items in the array.
 Public Function ArryCount(ByRef Source As Variant)
     If IsEmpty(Source) Then
         ArryCount = 0

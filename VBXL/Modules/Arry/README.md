@@ -62,7 +62,7 @@ Counts the items in an array.
     - The array to reference.
 
 **Returns**
-- The number of items in the array. `Long`
+- `Long`: The number of items in the array. 
 
 ---
 

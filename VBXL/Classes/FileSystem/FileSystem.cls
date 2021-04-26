@@ -192,7 +192,7 @@ End Function
 ''' Summary:
 '''     Gets the file extension from a file path
 Public Function GetExtension(ByRef Path As Variant, Optional ByRef IncludePeriod As Boolean = True) As String
-    Dim ext   As String: ext = FS.GetExtensionName(Path)
+    Dim ext As String: ext = FS.GetExtensionName(Path)
     If ext = vbNullString Then GetExtension = vbNullString Else: GetExtension = IIf(IncludePeriod, "." & ext, ext)
 End Function
 

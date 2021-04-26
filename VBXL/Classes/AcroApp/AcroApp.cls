@@ -65,26 +65,41 @@ End Sub
 
 ''' Summary:
 '''     Merges an array of file paths into a single PDF
-Public Sub MergeDocuments(ByRef finalizedName As String, ByRef documentsToMerge As Variant, ByRef saveToDirectory As String)
-    '    If Right(saveToDirectory, 1) <> "\" Then saveToDirectory = saveToDirectory & "\"
-    
-    Dim i     As Long, numberOfPages As Long, numberOfNewPages As Long, docPath As String, documentParts() As Object, FS As New FileSystem
-    
+''' Parameters:
+'''     ByRef FileName: The finalized PDF file name. The extension isn't required.
+'''     ByRef Items: The array of PDFs to merge. Consists of full file paths.
+'''     ByRef OutputDirectory: The output directory to save the merged PDF to.
+''' Returns:
+'''     A string; The combined PDF's file path.
+Public Function PDFCombine(ByRef FileName As String, ByRef Items As Variant, ByRef OutputDirectory As String) As String
+    Dim i                 As Long
+    Dim numberOfPages     As Long
+    Dim numberOfNewPages  As Long
+    Dim docPath           As String
+    Dim documentParts()   As Object
+    Dim FS                As Object
+    Dim OutputFile        As String
+
+
+    Set FS = CreateObject("Scripting.FileSystemObject")
     Set xAcrobatApp = CreateObject(AppPID_App)
     Set xAcrobatAVDoc = CreateObject(AppPID_AVDoc)
     Set xAcrobatPDDoc = CreateObject(AppPID_PDDoc)
-    
-    If FS.GetExtension(finalizedName) = vbNullString Then finalizedName = finalizedName & ".pdf"
-    
+
+    ' Check for the file extension
+    If FS.GetExtensionName(FileName) = vbNullString Then FileName = FileName & ".pdf"
+
+    OutputFile = FS.BuildPath(OutputDirectory, FileName)
+
     ' If xAcrobatPDDoc.Create = False Then
     '     '        MsgBox "Did not create Combined PDF file.", vbCritical + vbOKOnly, "File Not Created"
     ' End If
     
-    ReDim documentParts(1 To UBound(documentsToMerge))
+    ReDim documentParts(1 To UBound(Items))
         
-    For i = 1 To UBound(documentsToMerge)
+    For i = 1 To UBound(Items)
         'Check If PDF Exists
-        docPath = Trim$(documentsToMerge(i))
+        docPath = Trim$(Items(i))
         If Not FS.FileExists(docPath) Then GoTo NextDoc_
             
         'Opens PDFs
@@ -112,8 +127,8 @@ NextDoc_:
     Next
      
     'Save Merged Doc To DestFile
-    If i > UBound(documentsToMerge) Then
-        If Not xAcrobatPDDoc.Save(PDSaveFull, FS.BuildPath(saveToDirectory, finalizedName)) Then
+    If i > UBound(Items) Then
+        If Not xAcrobatPDDoc.Save(PDSaveFull, OutputFile) Then
             '                MsgBox "Cannot save the resulting document" & vbLf & saveToDirectory & finalizedName, vbExclamation, "Canceled"
         End If
     End If
@@ -121,7 +136,7 @@ NextDoc_:
     'Errors
     If Err.Number Then
         MsgBox Err.Description, vbCritical, "Error #" & Err.Number
-    ElseIf i > UBound(documentsToMerge) Then
+    ElseIf i > UBound(Items) Then
         'MsgBox "The resulting file is created:" & vbLf & p & DestFile, vbInformation, "Done"
     End If
          
@@ -130,13 +145,31 @@ NextDoc_:
         
     Set xAcrobatPDDoc = Nothing
     Set xAcrobatApp = Nothing
-End Sub
+
+    PDFCombine = OutputFile
+End Function
 
 ''' Summary:
 '''     Converts a file to a PDF.
+''' Parameters:
+'''     ByRef Path: The full file path of the file to convert.
+''' Returns:
+'''     A string; The converted file's PDF path.
 Public Function ConvertToPDF(ByRef Path As String) As String
-    Dim objJSO As Object, boResult As Boolean, expFormat As String, nPath As String, FS As New FileSystem
-    Dim ext   As String: ext = FS.GetExtension(Path, False)
+    Dim objJSO      As Object
+    Dim boResult    As Boolean
+    Dim expFormat   As String
+    Dim nPath       As String
+    ' Dim FS As New FileSystem
+    Dim FS          As Object
+    
+    Set FS = CreateObject("Scripting.FileSystemObject")
+
+    Dim ext   As String
+    ' ext = FS.GetExtension(Path, False)
+
+    ' Get the file extension
+    ext = FS.GetExtensionName(Path)
    
     Set xAcrobatApp = CreateObject(AppPID_App)
     Set xAcrobatAVDoc = CreateObject(AppPID_AVDoc)
@@ -200,4 +233,5 @@ Public Function ConvertToPDF(ByRef Path As String) As String
 
     ConvertToPDF = nPath
 End Function
+
 
