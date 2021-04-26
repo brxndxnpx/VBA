@@ -33,9 +33,9 @@ Resizes an array. Will instantiate a new array if the array is empty.
 **Parameters**
 - `Source` `ByRef`
     - The array to resize.
-- `AddedBounds` `ByVal` _`Optional`_
+- `AddedBounds` `ByVal` [`Optional`]
     - The number of additional upper bound dimensions to add to the source.
-- `PreserveData` `ByVal` _`Optional`_
+- `PreserveData` `ByVal` [`Optional`]
     - Whether or not to preserve the data in the source.
 
 ---
