@@ -1,0 +1,16 @@
+# Arry
+
+Array helper functions.
+
+## Methods/Functions
+
+| Method/Functions | Type     | Description                                                                   | Parameters                                                                                                                                                                                                                       | Returns |
+|------------------|----------|-------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------|
+| ArryAppend       | Method   | Appends items to an array.                                                    | `ByRef Source`: The array to append.<br>`ByRef Items()`: The items to append to the source.                                                                                                                                      |         |
+| ArryResize       | Method   | Resizes an array. Will instantiate a new array if the array is empty.         | `ByRef Source`: The array to resize.<br>`ByVal Optional AddedUBound`: The number of additional upper bound dimensions to add to the source.<br>`ByVal Optional PreserveData`: Whether or not to preserve the data in the source. |         |
+| ArryRemove       | Method   | Removes an item from an array and resizes it.                                 | `ByRef Source`: The array to reference.<br>`ByVal Index`: The index to remove.                                                                                                                                                   |         |
+| ArryCount        | Function | Counts the items in an array.                                                 | `ByRef Source`: The array to reference.                                                                                                                                                                                          |         |
+| ArryDebug        | Method   | `Debug.Print` the values of the items in the array along with it's data type. | `ByRef Source`: The array to reference.                                                                                                                                                                                          |         |
+
+
+
