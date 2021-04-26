@@ -2,3 +2,4 @@
 * text=auto
 
 *.cls linguist-language=VBA
+*.bas linguist-language=VBA
