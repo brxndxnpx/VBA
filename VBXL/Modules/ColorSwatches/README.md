@@ -2,9 +2,9 @@
 
 Enumerated color values. 
 
-Works for Userforms and Worksheet objects i.e. Cell/Range colors.
-
-Based on Material Design color swatches.
+- Works for Userforms and Worksheet objects i.e. Cell/Range colors.
+- Can be used for creating custom color themes for Userforms/Workbooks.
+- Based on [Material Design](https://www.materialpalette.com/colors) color swatches.
 
 ---
 
