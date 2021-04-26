@@ -16,15 +16,14 @@ Public Enum AcrobatApplicationKey
     PDSaveCollectGarbage = 32
 End Enum
 
-Private Const AppPID_App As String = "AcroExch.App"
-Private Const AppPID_AVDoc As String = "AcroExch.AVDoc"
-Private Const AppPID_PDDoc As String = "AcroExch.PDDoc"
+Private Const AppPID_App    As String = "AcroExch.App"
+Private Const AppPID_AVDoc  As String = "AcroExch.AVDoc"
+Private Const AppPID_PDDoc  As String = "AcroExch.PDDoc"
 
-Private xAcrobatApp As Object
-Private xAcrobatAVDoc As Object
-Private xAcrobatPDDoc As Object
-
-Private IsInstalled_ As Boolean
+Private xAcrobatApp     As Object
+Private xAcrobatAVDoc   As Object
+Private xAcrobatPDDoc   As Object
+Private IsInstalled_    As Boolean
 
 ''' Summary:
 '''     If Adobe Acrobat DC is installed
@@ -50,6 +49,9 @@ ErrHandler_:
     
     On Error GoTo 0
     
+    xAcrobatPDDoc.Close
+    xAcrobatApp.Exit
+    
     Set xAcrobatApp = Nothing
     Set xAcrobatAVDoc = Nothing
     Set xAcrobatPDDoc = Nothing
@@ -66,12 +68,12 @@ End Sub
 ''' Summary:
 '''     Combines an array of file paths into a single PDF. The files must be PDFs.
 ''' Parameters:
-'''     ByRef FileName: The finalized PDF file name. The extension isn't required.
+'''     ByVal FileName: The finalized PDF file name. The extension isn't required.
 '''     ByRef Items: The array of PDFs to merge. Consists of full file paths.
 '''     ByRef OutputDirectory: The output directory to save the merged PDF to.
 ''' Returns:
 '''     A string; The combined PDF's file path.
-Public Function PDFCombine(ByRef FileName As String, ByRef Items As Variant, ByRef OutputDirectory As String) As String
+Public Function PDFCombine(ByVal FileName As String, ByRef Items As Variant, ByRef OutputDirectory As String) As String
     Dim i                 As Long
     Dim numberOfPages     As Long
     Dim numberOfNewPages  As Long
@@ -79,7 +81,6 @@ Public Function PDFCombine(ByRef FileName As String, ByRef Items As Variant, ByR
     Dim documentParts()   As Object
     Dim FS                As Object
     Dim OutputFile        As String
-
 
     Set FS = CreateObject("Scripting.FileSystemObject")
     Set xAcrobatApp = CreateObject(AppPID_App)
@@ -91,9 +92,10 @@ Public Function PDFCombine(ByRef FileName As String, ByRef Items As Variant, ByR
 
     OutputFile = FS.BuildPath(OutputDirectory, FileName)
 
-    ' If xAcrobatPDDoc.Create = False Then
-    '     '        MsgBox "Did not create Combined PDF file.", vbCritical + vbOKOnly, "File Not Created"
-    ' End If
+     If xAcrobatPDDoc.Create = False Then
+    '     ' Error handling if AcrobatPDDoc couldn't be created
+    '     ' MsgBox "Did not create Combined PDF file.", vbCritical + vbOKOnly, "File Not Created"
+     End If
     
     ReDim documentParts(1 To UBound(Items))
         
@@ -111,7 +113,8 @@ Public Function PDFCombine(ByRef FileName As String, ByRef Items As Variant, ByR
             numberOfNewPages = documentParts(i).GetNumPages()
                 
             If Not xAcrobatPDDoc.InsertPages(numberOfPages - 1, documentParts(i), 0, numberOfNewPages, True) Then
-                '                    MsgBox "Cannot insert pages of" & vbLf & saveToDirectory & documentParts(i), vbExclamation, "Canceled"
+                ' Error handling if page insertion failed
+                ' MsgBox "Cannot insert pages of" & vbLf & saveToDirectory & documentParts(i), vbExclamation, "Canceled"
             End If
     
             'Gets Page # - PartDocs(i)
@@ -126,10 +129,11 @@ Public Function PDFCombine(ByRef FileName As String, ByRef Items As Variant, ByR
 NextDoc_:
     Next
      
-    'Save Merged Doc To DestFile
+    'Save the merged doc
     If i > UBound(Items) Then
         If Not xAcrobatPDDoc.Save(PDSaveFull, OutputFile) Then
-            '                MsgBox "Cannot save the resulting document" & vbLf & saveToDirectory & finalizedName, vbExclamation, "Canceled"
+            ' Error handling if save failed
+            ' MsgBox "Cannot save the resulting document" & vbLf & saveToDirectory & finalizedName, vbExclamation, "Canceled"
         End If
     End If
     
@@ -160,26 +164,21 @@ Public Function ConvertToPDF(ByRef Path As String) As String
     Dim boResult    As Boolean
     Dim expFormat   As String
     Dim nPath       As String
-    ' Dim FS As New FileSystem
     Dim FS          As Object
-    
-    Set FS = CreateObject("Scripting.FileSystemObject")
-
-    Dim ext   As String
-    ' ext = FS.GetExtension(Path, False)
-
-    ' Get the file extension
-    ext = FS.GetExtensionName(Path)
+    Dim ext         As String
    
+    Set FS = CreateObject("Scripting.FileSystemObject")
     Set xAcrobatApp = CreateObject(AppPID_App)
     Set xAcrobatAVDoc = CreateObject(AppPID_AVDoc)
-    '    Set xAcrobatPDDoc = CreateObject(AppPID_PDDoc)
     
     boResult = xAcrobatAVDoc.Open(Path, vbNullString)
     Set xAcrobatPDDoc = xAcrobatAVDoc.GetPDDoc
    
     '   Set the javascript object
     Set objJSO = xAcrobatPDDoc.GetJSObject
+
+    ' Get the file extension
+    ext = FS.GetExtensionName(Path)
     
     '   Check conversion type
     Select Case LCase$(ext)
@@ -215,7 +214,7 @@ Public Function ConvertToPDF(ByRef Path As String) As String
             expFormat = vbNullString
     End Select
     
-    If expFormat <> vbNullString Then            'And Err.Number = 0 Then
+    If expFormat <> vbNullString Then 'And Err.Number = 0 Then
         '   Set the path of the new file. Note that Adobe instead of xls uses xml files.
         '   That's why here the xls extension changes to xml.
         nPath = IIf(LCase$(ext) <> "xls", Replace(Path, LCase$(ext), "pdf"), Replace(Path, "xml", "pdf"))
@@ -233,5 +232,6 @@ Public Function ConvertToPDF(ByRef Path As String) As String
 
     ConvertToPDF = nPath
 End Function
+
 
 

@@ -28,7 +28,7 @@ Combines an array of file paths into a single PDF.
 The files must be PDFs.
 
 **Parameters**
-- `FileName` `ByRef`
+- `FileName` `ByVal`
     - The finalized PDF file name. The extension isn't required.
 - `Items` `ByRef`
     - The array of PDFs to merge. Consists of full file paths.
@@ -69,81 +69,80 @@ This sub routine will...
 ```vb
 Private Sub Demo()
     Dim AC          As New AcroApp
-    Dim filename_   As String
     Dim FS          As Object
+    Dim basename_   As String
+    Dim filename_   As String
     Dim filepath_   As String
-    Dim writeText_  As String
-    Dim i           As Long
-    Dim textStream  As Object
-    Dim temp_       As String
+    Dim text_       As String
+    Dim stream_     As Object
+    Dim folder_     As String
     Dim mergedPDF_  As String
-    Dim files_      As Variant
-    Dim pdfs_       As Variant
+    Dim txt_files_  As Variant
+    Dim pdf_files_  As Variant
+    Dim i           As Long
     
     ' Set the name of the file that's to be created
-    'filename_ = "Sample Text File.txt"
-    filename_ = "Sample Text File"
+    basename_ = "Sample Example File"
     
     ' Create a file system object to build the file path and create the text file
     Set FS = CreateObject("Scripting.FileSystemObject")
     
     ' Get the user's temp folder
-    temp_ = Environ$("TEMP")
+    folder_ = Environ$("TEMP")
     
     ' Create an array to house the newly created sample files.
     '   This will be used to convert the files to PDFs
-    ReDim files_(0 To 5)
+    ReDim txt_files_(0 To 5)
     
     ' Create an array to house the newly created sample PDFs.
     '   This will be used to merge the PDFs into a single PDF document
-    ReDim pdfs_(0 To 5)
+    ReDim pdf_files_(0 To 5)
     
     For i = 0 To 5
         ' Set the name of the file that's to be created
-        filename_ = "Sample Text File " & i & ".txt"
+        filename_ = basename_ & " " & i & ".txt"
         
         ' Get the path of the new file to be created
-        filepath_ = FS.BuildPath(temp_, filename_)
+        filepath_ = FS.BuildPath(folder_, filename_)
         
         ' Sample text to write
-        writeText_ = "File " & i & vbNewLine & vbNewLine & _
+        text_ = "File " & i & vbNewLine & vbNewLine & _
             "Hello" & vbNewLine & "World!" & vbNewLine & vbNewLine & "How are you?"
         
         ' Create an empty text file in the user's temp folder
-        Set textStream = FS.CreateTextFile(filepath_, True)
+        Set stream_ = FS.CreateTextFile(filepath_, True)
       
         ' Write text to the file
-        textStream.WriteLine writeText_
-        textStream.Close
+        stream_.WriteLine text_
+        stream_.Close
         
         ' Append the text file to the files array (to delete later)
-        files_(i) = filepath_
+        txt_files_(i) = filepath_
         
         ' Convert the text file to a PDF
         ' Append the path to the PDFs array (to delete later)
-        pdfs_(i) = AC.ConvertToPDF(filepath_)
+        pdf_files_(i) = AC.ConvertToPDF(filepath_)
     Next
     
-    mergedPDF_ = FS.BuildPath(temp_, "Sample PDF File.pdf")
-    
     ' Merge the PDFs into 1 document
-    AC.PDFCombine "Sample PDF File", pdfs_, temp_
+    mergedPDF_ = AC.PDFCombine(basename_, pdf_files_, folder_)
     
     ' Open the PDF
     ActiveWorkbook.FollowHyperlink mergedPDF_
     
     ' Delete the files
-    For i = LBound(files_) To UBound(files_)
-        FS.DeleteFile files_(i)
-        FS.DeleteFile pdfs_(i)
+    For i = LBound(txt_files_) To UBound(txt_files_)
+        FS.DeleteFile txt_files_(i)
+        FS.DeleteFile pdf_files_(i)
     Next
     
     ' Open the user's temp file so they can delete the Sample PDF File.pdf file.
-    Shell "Explorer.exe" & " " & temp_, vbNormalFocus
+    Shell "Explorer.exe " & folder_, vbNormalFocus
     
     ' Prompt the user to delete the Sample PDF File.pdf file.
-    MsgBox "The macro deleted the individual files but you will have to delete the 'Sample PDF File.pdf' in the temp folder." & vbNewLine & _
-        "The macro couldn't delete it because it is opened."
+    MsgBox "The macro deleted the individual text and PDF files created, " & vbNewLine _
+        & "but you will have to delete the '" & basename_ & "'.pdf' in the temp folder." & vbNewLine _
+        & "The macro couldn't delete it because it is opened."
     
 End Sub
 ```
