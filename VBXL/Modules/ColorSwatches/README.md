@@ -1,12 +1,9 @@
 # ColorSwatches
 
 Enumerated color values. 
-
 - Works for Userforms and Worksheet objects i.e. Cell/Range colors.
 - Can be used for creating custom color themes for Userforms/Workbooks.
 - Based on [Material Design](https://www.materialpalette.com/colors) color swatches.
-
-
 - Color codes prefixed with "A" are _accent_ colors.
     - i.e. `ColorSwatch.AmberA700`
 

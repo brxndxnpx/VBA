@@ -20,7 +20,7 @@ You can also store other objects in the dictionary.
 | Count    | The number of items in the dictionary.           |
 
 
-## Methods/Functions
+## Methods & Functions
 
 | Method/Functions | Type     | Description                                    | Returns                            |
 |------------------|----------|------------------------------------------------|------------------------------------|
