@@ -11,7 +11,7 @@ VBA modules, classes, and code snippets for Microsoft Office Applications (Excel
 - [Dictionary](/VBXL/Classes/Dictionary/)
 - [FileSystem](/VBXL/Classes/FileSystem/)
 - [StringBuilder](/VBXL/Classes/StringBuilder/)
-
+- [SqlAccessor](/VBXL/Classes/SqlAccessor/)
 
 **Modules**
 - [Arry](/VBXL/Modules/Arry/)
