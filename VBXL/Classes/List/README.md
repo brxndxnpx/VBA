@@ -1,8 +1,8 @@
 # List
 
-A array based class that allows grouping data or objects into a single record in an array.
+A array based class that is intended to make managing arrays easier by resizing whenever an item is added or removed.
 
-Primarily used for creating complex nested arrays.
+Can be used for creating complex nested arrays.
 
 
 ## Properties
@@ -17,27 +17,37 @@ Primarily used for creating complex nested arrays.
 
 ## Methods & Functions
 
-|                     | Type | Description                                                                               |
-|---------------------|------|-------------------------------------------------------------------------------------------|
-| [`Add`](#add)       |      | Adds an item to the list. Will nest data into an array if multiple parameters are passed. |
-| [`Remove`](#remove) |      | Removes an item by an index.                                                              |
-| [`Clear`](#clear)   |      | Clears the items in the List.                                                             |
+|                             | Type | Description                                                                               |
+|-----------------------------|------|-------------------------------------------------------------------------------------------|
+| [`Add`](#add)               |      | Adds item(s) to the list. Will add each item as a new record.                             |
+| [`AddAsArray`](#addasarray) |      | Adds an item to the list. Will nest the items into an array if multiple items are passed. |
+| [`Remove`](#remove)         |      | Removes an item by an index.                                                              |
+| [`Clear`](#clear)           |      | Clears the items in the List.                                                             |
 
 ---
 
-### [`Add`](List.cls#L63)
+### [`Add`](List.cls#L64)
 
-Adds an item to the List. 
-
-Will nest data into an array if multiple parameters are passed.
+Adds item(s) to the list.
+- Will add each item as a new record.
 
 **Parameters**
 - `Values()` `ByRef` `ParamArray` `Variant`
-    - The items to add to the next record.
-    - If multiple items are passed then they will be grouped into a new array and placed into NEXT record.
+    - The item(s) to add.
 
 
-### [`Remove`](List.cls#L99)
+### [`AddAsArray`](List.cls#L93)
+
+Adds an item to the list. 
+- Will nest the items into an array if multiple items are passed.
+
+**Parameters**
+- `Values()` `ByRef` `ParamArray` `Variant`
+    - The item(s) to add to the next record.
+    - If multiple items are passed then they will be grouped into a child array.
+
+
+### [`Remove`](List.cls#L134)
 
 Removes an item by an index.
 
@@ -45,7 +55,7 @@ Removes an item by an index.
 - `Index` `ByRef` `Long`
     - The index to remove.
 
-### [`Clear`](List.cls#L121)
+### [`Clear`](List.cls#L156)
 
 Clears the list.
 
@@ -101,20 +111,23 @@ Attribute Item.VB_UserMemId = 0
 
 ```vb
 Private Sub Demo()
-    Dim container  As New List
-    Dim obj        As Worksheet
-    Dim x          As Long
-    Dim y          As Long
+    Dim container As New List
+    Dim x As Long
+    Dim y As Long
     
-    Set obj = ActiveWorkbook.Sheets(1)
-    
-    ' Add a string, a number, an object, and an array to the list
+    ' Add a string, a number, an object
     container.Add "Hello World"
     container.Add 5
-    container.Add obj
+    container.Add ActiveWorkbook.Sheets(1)
     
-    ' This will created a nested array
-    container.Add "Hello", "World", "How", "Are", "You", "?" 
+    ' Add several records at once
+    '   This will add each item as a new record
+    container.Add "Hello", "World", "How", "Are", "You", "?"
+    
+    ' Add a array child
+    '   This will created a nested array
+    container.AddAsArray "Hello", "World", "How", "Are", "You", "Again", "?"
+    
     container.Add "I am the last item"
     
     ' Print the items in the list to the immediate window
@@ -140,18 +153,25 @@ Private Sub Demo()
     Next
 
     ' Prints:
-    '   Items:         5 
+    '   Items:         11 
     '    0            String        Hello World
     '    1            Integer        5 
     '    2            Object        Worksheet
-    '    3            Array
+    '    3            String        Hello
+    '    4            String        World
+    '    5            String        How
+    '    6            String        Are
+    '    7            String        You
+    '    8            String        ?
+    '    9            Array
     '                  0            String        Hello
     '                  1            String        World
     '                  2            String        How
     '                  3            String        Are
     '                  4            String        You
-    '                  5            String        ?
-    '    4            String        I am the last item
+    '                  5            String        Again
+    '                  6            String        ?
+    '    10           String        I am the last item    
 
 End Sub
 ```

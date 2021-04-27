@@ -11,7 +11,8 @@ Option Explicit
 
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 ''' Module Summary
-'''     A array based class that allows grouping data or objects into a single record in an array.
+'''     A array based class that is intended to make managing arrays easier by resizing whenever an item is added or removed.
+'''     Can be used for creating complex nested arrays.
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
 ''' Summary:
@@ -55,42 +56,76 @@ Public Property Get Count() As Long
     End If
 End Property
 
+
+''' Summary:
+'''     Adds an item to the list.
+''' Parameters:
+'''     ParamArray Values() As Variant: The items to add.
+Public Sub Add(ParamArray Values() As Variant)
+    Dim i   As Long ' For iterating through the Values
+    Dim x   As Long ' For iterating through the Items
+    
+    '   Resize the array and set x to the next item index
+    If IsEmpty(Items) Then
+        ReDim Items(UBound(Values))
+        x = LBound(Items)
+    Else
+        x = UBound(Items) + 1
+        ReDim Preserve Items(0 To UBound(Items) + IIf(LBound(Values) = 0, UBound(Values) + 1, UBound(Values)))
+    End If
+
+    '   Insert the new item(s)
+    For i = LBound(Values) To UBound(Values)
+        If IsObject(Values(i)) Then
+            Set Items(x) = Values(i)
+        Else
+            Items(x) = Values(i)
+        End If
+        x = x + 1
+    Next
+End Sub
+
 ''' Summary:
 '''     Adds an item to the list.
 '''     Will nest data into an array if multiple parameters are passed.
 ''' Parameters:
 '''     ParamArray Values() As Variant: The items to add to the next record.
-Public Sub Add(ParamArray Values() As Variant)
-    Dim NewItem    As Variant
+Public Sub AddAsArray(ParamArray Values() As Variant)
+    Dim ItemArray  As Variant
     Dim i          As Long
       
+    ' Check if there's only 1 item in Values()
     If LBound(Values) = UBound(Values) Then
-        If IsObject(Values(LBound(Values))) Then 
-            Set NewItem = Values(LBound(Values)) 
+        If IsObject(Values(LBound(Values))) Then
+            Set ItemArray = Values(LBound(Values))
         Else
-            NewItem = Values(LBound(Values))
+            ItemArray = Values(LBound(Values))
         End If
         GoTo InsertItem
     End If
       
-    ReDim NewItem(UBound(Values))
+    ' If there are several items then create an array
+    ReDim ItemArray(UBound(Values))
     For i = LBound(Values) To UBound(Values)
-        If IsObject(Values(i)) Then Set NewItem(i) = Values(i) Else: NewItem(i) = Values(i)
+        If IsObject(Values(i)) Then Set ItemArray(i) = Values(i) Else: ItemArray(i) = Values(i)
     Next
       
 InsertItem:
-    If IsEmpty(Items) Then 
-        ReDim Items(0) 
+    '   Resize the array
+    If IsEmpty(Items) Then
+        ReDim Items(0)
     Else
         ReDim Preserve Items(0 To UBound(Items) + 1)
     End If
 
-    If IsObject(NewItem) Then 
-        Set Items(UBound(Items)) = NewItem 
+    '   Insert the new item
+    If IsObject(ItemArray) Then
+        Set Items(UBound(Items)) = ItemArray
     Else
-        Items(UBound(Items)) = NewItem
+        Items(UBound(Items)) = ItemArray
     End If
 End Sub
+
 
 ''' Summary:
 '''     Removes an item by an index.
