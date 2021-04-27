@@ -63,3 +63,10 @@ A string building class that utilizes the `Scripting.Dictionary` object.
 - The dictionary's key is auto incremented and managed by the `StringBuilder` object.
 
 This class is useful for building lengthy complex or formatted text, like an XML document.
+
+### [SqlAccessor](/VBXL/Classes/SqlAccessor/)
+
+A late binding object made to execute simple database queries and return the dataset as an array.
+- Uses the `ADODB.Command`, `ADODB.Recordset`, and `ADODB.Connection` objects.
+    - See MSDN Documentation [here](https://docs.microsoft.com/en-us/sql/ado/guide/data/creating-and-executing-a-simple-command?view=sql-server-ver15).
+
