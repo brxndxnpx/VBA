@@ -52,9 +52,9 @@ Recommended to be used in conjunction with...
 
 ### [List](/VBXL/Classes/List/)
 
-A array based class that allows grouping data or objects into a single record in an array.
+A array based class that is intended to make managing arrays easier by resizing whenever an item is added or removed.
 
-Primarily used for creating complex nested arrays.
+Can be used for creating complex nested arrays.
 
 ### [OutlookApp](/VBXL/Classes/OutlookApp/)
 
