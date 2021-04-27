@@ -15,7 +15,6 @@ VBA modules, classes, and code snippets for Microsoft Office Applications (Excel
 **Modules**
 - [Arry](/VBXL/Modules/Arry/)
 - [ColorSwatches](/VBXL/Modules/ColorSwatches/)
-- [DynamicLinkLibraries](/VBXL/Modules/DynamicLinkLibraries/)
 - [Environment](/VBXL/Modules/Environment/)
 - [ObjectInspector](/VBXL/Modules/ObjectInspector/)
 - [ShellCommand](/VBXL/Modules/ShellCommand/)
