@@ -1,8 +1,6 @@
 # VBA
 VBA modules, classes, and code snippets for Microsoft Office Applications (Excel, Word, Outlook, etc).
 
----
-
 ## VBXL (Excel)
 
 **Classes**
@@ -22,19 +20,15 @@ VBA modules, classes, and code snippets for Microsoft Office Applications (Excel
 - [ShellCommand](/VBXL/Modules/ShellCommand/)
 - [TextStreamer](/VBXL/Modules/TextStreamer/)
 
----
-
 ## VBOL (Word)
 
 - TBD
-
----
 
 ## VBWD (Outlook)
 
 - TBD
 
----
+
 
 <!-- 
 ## Notes

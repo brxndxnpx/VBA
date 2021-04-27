@@ -1,6 +1,6 @@
 # SqlAccessor
 
-A late binding object made to execute simple database queries and return the dataset as an array.
+A late bound object made to execute simple database queries and return the dataset as an array.
 - Uses the `ADODB.Command`, `ADODB.Recordset`, and `ADODB.Connection` objects.
     - See MSDN Documentation [here](https://docs.microsoft.com/en-us/sql/ado/guide/data/creating-and-executing-a-simple-command?view=sql-server-ver15).
 
@@ -8,9 +8,9 @@ A late binding object made to execute simple database queries and return the dat
 
 ## Properties
 
-| Property         | Description                     |
-|------------------|---------------------------------|
-| ConnectionString | The database connection string. |
+| Property           | Description                     |
+|--------------------|---------------------------------|
+| `ConnectionString` | The database connection string. |
 
 
 ## Methods & Functions
