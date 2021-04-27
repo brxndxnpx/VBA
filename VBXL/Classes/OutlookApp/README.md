@@ -72,3 +72,24 @@ Creates an Outlook draft.
     - An array of the attachments to include.
     - Each item in the array is a full file path.
 
+---
+
+## Usage
+
+```vb
+Private Sub Demo()
+    Dim App As New OutlookApp
+    ReDim Attachments(1) As Variant
+
+    ' The attachments have to consist of a FULL file path
+    Attachments(0) = "Some file to attach1.jpg"
+    Attachments(1) = "Some file to attach1.jpg"
+
+    App.EmailAddress = "YourEmailAddress@domain.com"
+    App.CreateDraft "Hello World", "TEST", "Recipient1@domain.com; Recipient2@domain.com", olAttachments:=Attachments
+
+    ' Sending an email without a signature    
+    App.UseSignature = False
+    App.CreateDraft "Hello World", "TEST", "Recipient1@domain.com; Recipient2@domain.com", olAttachments:=Attachments
+End Sub
+```

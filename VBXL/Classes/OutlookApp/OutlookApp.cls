@@ -296,7 +296,7 @@ End Sub
 Public Sub CreateDraft(ByVal olEmailBody As String, ByVal olSubject As String, ByVal olEmailTo As String, _
     Optional ByVal olEmailCc As String, Optional ByRef olAttachments As Variant)
     
-    If CheckInstall = False Then Exit Function
+    If CheckInstall = False Then Exit Sub
     
     Dim olEmail       As Object
     Dim errMsg        As String
@@ -360,6 +360,6 @@ Private Function CheckInstall() As Boolean
     If this.IsInstalled = False Then 
         MsgBox "Outlook isn't installed or is inaccessable.", vbExclamation, "Error"
     End If
-End Sub
+End Function
 
 

@@ -43,17 +43,3 @@ Private Sub Demo()
     Debug.Print "Demo"
 End Sub
 ```
-
-
-
-```vb
-''' Summary:
-'''     summary
-''' Parameters:
-'''     ByVal param1: summary
-'''     ByRef param2: summary
-''' Returns:
-'''     A type; summary
-
-
-```
