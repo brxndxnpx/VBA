@@ -21,11 +21,11 @@ VBA modules, classes, and code snippets for Microsoft Office Applications (Excel
 - [ShellCommand](/VBXL/Modules/ShellCommand/)
 - [TextStreamer](/VBXL/Modules/TextStreamer/)
 
-## VBOL (Word)
+## VBOL (Outlook)
 
 - TBD
 
-## VBWD (Outlook)
+## VBWD (Word)
 
 - TBD
 
