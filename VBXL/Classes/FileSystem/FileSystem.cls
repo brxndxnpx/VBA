@@ -1,5 +1,21 @@
 Option Explicit
 
+'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+''' Module Summary
+'''     A late-binding wrapper class for the `Scripting.FileSystemObject` object.
+'''     
+'''     Allows using the `Scripting.FileSystemObject` object with intellisense without having to add a reference.
+'''     - Other users may not have the `Scripting` library added in their Visual Basic Editor. 
+'''     - This will alleviate that issue by using late-binding.
+'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+
+#If VBA7 Then
+    Private Declare PtrSafe Function URLDownloadToFileA Lib "UrlMon" (ByVal pCaller As LongPtr, ByVal szURL As String, ByVal szFileName As String, ByVal dwReserved As LongPtr, ByVal lpfnCB As LongPtr) As LongPtr
+#Else
+    Private Declare Function URLDownloadToFileA Lib "UrlMon" ( ByVal pCaller As Long, ByVal szURL As String, ByVal szFileName As String, ByVal dwReserved As Long, ByVal lpfnCB As Long) As Long
+#End If
+
+
 Private Const AppPID As String = "Scripting.FileSystemObject"
 
 Public Enum IOMode
