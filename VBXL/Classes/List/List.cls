@@ -15,7 +15,7 @@ Option Explicit
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
 ''' Summary:
-'''     The items in the List.
+'''     The items in the list.
 Public Items  As Variant
 
 ''' Summary:
@@ -56,8 +56,8 @@ Public Property Get Count() As Long
 End Property
 
 ''' Summary:
-'''     Adds an item to the List
-'''     Will nest data into an array if multiple parameters are passed
+'''     Adds an item to the list.
+'''     Will nest data into an array if multiple parameters are passed.
 ''' Parameters:
 '''     ParamArray Values() As Variant: The items to add to the next record.
 Public Sub Add(ParamArray Values() As Variant)

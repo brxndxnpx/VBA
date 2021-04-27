@@ -9,8 +9,8 @@ Primarily used for creating complex nested arrays.
 
 | Property     | Type      | Description                         |
 |--------------|-----------|-------------------------------------|
-| `Items`      | `Variant` | The items in the List               |
-| `Item`       | `Variant` | An item at an index                 |
+| `Items`      | `Variant` | The items in the list.              |
+| `Item`       | `Variant` | An item at an index.                |
 | `LowerBound` | `Long`    | The lower bound of the items array. |
 | `UpperBound` | `Long`    | The upper bound of the items array. |
 | `Count`      | `Long`    | The number of items in the list.    |
@@ -19,7 +19,7 @@ Primarily used for creating complex nested arrays.
 
 |                     | Type | Description                                                                               |
 |---------------------|------|-------------------------------------------------------------------------------------------|
-| [`Add`](#add)       |      | Adds an item to the List. Will nest data into an array if multiple parameters are passed. |
+| [`Add`](#add)       |      | Adds an item to the list. Will nest data into an array if multiple parameters are passed. |
 | [`Remove`](#remove) |      | Removes an item by an index.                                                              |
 | [`Clear`](#clear)   |      | Clears the items in the List.                                                             |
 
@@ -47,14 +47,7 @@ Removes an item by an index.
 
 ### [`Clear`](List.cls#L123)
 
-Summary
-
-**Parameters**
-- `Param1` `ByRef` `String`
-    - Description
-- `Param2` `ByVal` `String` [`Optional`]
-    - Description
-
+Clears the list.
 
 ---
 
