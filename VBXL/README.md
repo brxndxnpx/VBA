@@ -49,12 +49,12 @@ Allows using the `Scripting.FileSystemObject` object with intellisense without h
 
 Recommended to be used in conjunction with...
 - [Environment.bas](/VBXL/Modules/Environment/Environment.bas) module for easier file path access.
-- [DynamicLinkLibraries.bas](/VBXL/Modules/DynamicLinkLibraries/DynamicLinkLibraries.bas) module for downloading documents via URL.
 
-Dependencies:
-[DynamicLinkLibraries.bas](/VBXL/Modules/DynamicLinkLibraries/DynamicLinkLibraries.bas)
-- The `DownloadDocument` method requires the [DynamicLinkLibraries.bas](/VBXL/Modules/DynamicLinkLibraries/DynamicLinkLibraries.bas) to be included in the project.
-    - This method can be removed otherwise.
+### [List](/VBXL/Classes/List/)
+
+A array based class that allows grouping data or objects into a single record in an array.
+
+Primarily used for creating complex nested arrays.
 
 ### [OutlookApp](/VBXL/Classes/OutlookApp/)
 

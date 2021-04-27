@@ -8,6 +8,7 @@ VBA modules, classes, and code snippets for Microsoft Office Applications (Excel
 - [ColorInfo](/VBXL/Classes/ColorInfo/)
 - [Dictionary](/VBXL/Classes/Dictionary/)
 - [FileSystem](/VBXL/Classes/FileSystem/)
+- [List](/VBXL/Classes/List/)
 - [OutlookApp](/VBXL/Classes/OutlookApp/)
 - [StringBuilder](/VBXL/Classes/StringBuilder/)
 - [SqlAccessor](/VBXL/Classes/SqlAccessor/)

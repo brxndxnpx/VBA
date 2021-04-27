@@ -53,6 +53,12 @@ Dependencies:
 - The `DownloadDocument` method requires the [DynamicLinkLibraries.bas](/VBXL/Modules/DynamicLinkLibraries/DynamicLinkLibraries.bas) to be included in the project.
     - This method can be removed otherwise.
 
+### [List](/VBXL/Classes/List/)
+
+A array based class that allows grouping data or objects into a single record in an array.
+
+Primarily used for creating complex nested arrays.
+
 ### [OutlookApp](/VBXL/Classes/OutlookApp/)
 
 A late bound object made to utilize Outlook functionalities from Excel.
