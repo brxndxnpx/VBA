@@ -1,38 +1,38 @@
 # Module
 
-desc
+Summary
 
 ## Properties
 
-| Property | Type      | Description |
-|----------|-----------|-------------|
-| `Prop1`  | `String`  |             |
-| `Prop2`  | `Boolean` |             |
-| `Prop3`  | `Long`    |             |
-| `Prop4`  | `Object`  |             |
+| Property | Type | Description |
+|----------|------|-------------|
+| ` `      | ``   |             |
+| ` `      | ``   |             |
+| ` `      | ``   |             |
+| ` `      | ``   |             |
 
 ## Methods & Functions
 
-|                                 | Type     | Description                                                                   |
-|---------------------------------|----------|-------------------------------------------------------------------------------|
-| [`GetAccount`](#getaccount)     | `Object` | Gets a single Outlook account that's added on the user's Outlook application. |
-| [`GetSignature`](#getsignature) | `String` | Gets the default email signature for a **new** email from an account.         |
-| [`CreateDraft`](#createdraft)   |          | Creates a draft in Outlook.                                                                              |
+|          | Type     | Description |
+|----------|----------|-------------|
+| [` `](#) | `Object` |             |
+| [` `](#) | `Object` |             |
+| [` `](#) | `Object` |             |
 
 ---
 
-### [`Method1`](Method1.bas#L0)
+### [`Method`](Method.bas#L0)
 
-desc
+Summary
 
 **Parameters**
-- `Param1` `ByRef`
-    - desc
-- `Param2` `ByVal` [`Optional`]
-    - desc
+- `Param1` `ByRef` `String`
+    - Description
+- `Param2` `ByVal` `String` [`Optional`]
+    - Description
 
 **Returns**
-- `Long`: desc
+- `Long`: Description
 
 ---
 
