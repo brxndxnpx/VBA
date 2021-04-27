@@ -1,6 +1,6 @@
 # Environment
 
-Environment functions pertaining to the user and the user's machine information.
+Environment functions pertaining to the user and the user's machine.
 
 
 ---
