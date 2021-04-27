@@ -53,6 +53,12 @@ Dependencies:
 - The `DownloadDocument` method requires the [DynamicLinkLibraries.bas](/VBXL/Modules/DynamicLinkLibraries/DynamicLinkLibraries.bas) to be included in the project.
     - This method can be removed otherwise.
 
+### [OutlookApp](/VBXL/Classes/OutlookApp/)
+
+A late bound object made to utilize Outlook functionalities from Excel.
+- Uses the Outlook application on the current user's machine.
+    - The `Outlook.Application` object.
+- Uses the accounts on the user's Outlook application.
 
 ### [StringBuilder](/VBXL/Classes/StringBuilder/)
 
