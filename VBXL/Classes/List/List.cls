@@ -62,7 +62,6 @@ End Property
 '''     ParamArray Values() As Variant: The items to add to the next record.
 Public Sub Add(ParamArray Values() As Variant)
     Dim NewItem    As Variant
-    Dim VarOffset  As Long
     Dim i          As Long
       
     If LBound(Values) = UBound(Values) Then
@@ -74,10 +73,9 @@ Public Sub Add(ParamArray Values() As Variant)
         GoTo InsertItem
     End If
       
-    VarOffset = IIf(LBound(Values) = 0, 1, 0)
-    ReDim NewItem(1 To UBound(Values) + VarOffset)
+    ReDim NewItem(UBound(Values))
     For i = LBound(Values) To UBound(Values)
-        If IsObject(Values(i)) Then Set NewItem(i + VarOffset) = Values(i) Else: NewItem(i + VarOffset) = Values(i)
+        If IsObject(Values(i)) Then Set NewItem(i) = Values(i) Else: NewItem(i) = Values(i)
     Next
       
 InsertItem:

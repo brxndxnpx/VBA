@@ -37,7 +37,7 @@ Will nest data into an array if multiple parameters are passed.
     - If multiple items are passed then they will be grouped into a new array and placed into NEXT record.
 
 
-### [`Remove`](List.cls#L101)
+### [`Remove`](List.cls#L99)
 
 Removes an item by an index.
 
@@ -45,7 +45,7 @@ Removes an item by an index.
 - `Index` `ByRef` `Long`
     - The index to remove.
 
-### [`Clear`](List.cls#L123)
+### [`Clear`](List.cls#L121)
 
 Clears the list.
 
@@ -145,12 +145,12 @@ Private Sub Demo()
     '    1            Integer        5 
     '    2            Object        Worksheet
     '    3            Array
-    '                  1            String        Hello
-    '                  2            String        World
-    '                  3            String        How
-    '                  4            String        Are
-    '                  5            String        You
-    '                  6            String        ?
+    '                  0            String        Hello
+    '                  1            String        World
+    '                  2            String        How
+    '                  3            String        Are
+    '                  4            String        You
+    '                  5            String        ?
     '    4            String        I am the last item
 
 End Sub
