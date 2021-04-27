@@ -123,6 +123,8 @@ Attribute Item.VB_UserMemId = 0
 
 ## Usage
 
+
+
 ### Adding Items
 
 ```vb
@@ -194,14 +196,17 @@ End Sub
 
 ### Removing Items
 
-This snippet removes the first and last items using the `Remove()` method.
+I'll be using 2 functions/methods in the examples below to prevent writing the same code in each example.
+
+The code is the exact same as the example above but split into 2 functions/methods.
+
+`GenerateList()`: Generates a list with the same data as above.
 
 ```vb
-Private Sub Demo()
+' Instantiate a new List object and populate it with dummy data
+Private Function GenerateList() As List
     Dim container As New List
-    Dim x As Long
-    Dim y As Long
-    
+
     ' Add a string, a number, an object
     container.Add "Hello World"
     container.Add 5
@@ -213,15 +218,24 @@ Private Sub Demo()
     
     ' Add a array child
     '   This will created a nested array
-    container.AddAsArray "Hello", "World", "How", "Are", "You", "Again", "?"
+    container.AddAsArray "Hello", "How", "Are", "You", "Again", "?"
     
     container.Add "I am the last item"
     
-    ' Remove the first and last items
-    container.Remove container.LowerBound
-    container.Remove container.UpperBound
+    PrintListItems container
+    Debug.Print ""
+    
+    Set GenerateList = container
+End Function
+```
 
-    ' Print the items in the list to the immediate window
+`PrintListItems()`: Prints the items in the list just like the example above.
+```vb
+' Print the items in the list to the immediate window
+Private Sub PrintListItems(ByRef container As List)
+    Dim x As Long
+    Dim y As Long
+    
     Debug.Print "Items:", container.Count
     
     For x = container.LowerBound To container.UpperBound
@@ -242,6 +256,23 @@ Private Sub Demo()
             End If
         End If
     Next
+End Sub
+```
+
+---
+
+This snippet removes the first and last items using the `Remove()` method.
+
+```vb
+Private Sub Demo()
+    Dim container As List
+    Set container = GenerateList
+    
+    ' Remove the first and last items
+    container.Remove container.LowerBound
+    container.Remove container.UpperBound
+    
+    PrintListItems container
 
     ' Prints:
     '   Items:         9 
@@ -280,8 +311,7 @@ Private Sub Demo()
     '                  4            String        You
     '                  5            String        Again
     '                  6            String        ?
-    '    10           String        I am the last item  
-
+    '    10           String        I am the last item      
 End Sub
 ```
 
@@ -292,51 +322,15 @@ This snippet removes a range of items using the `RemoveRange()` method.
 
 ```vb
 Private Sub Demo()
-    Dim container As New List
-    Dim x As Long
-    Dim y As Long
-    
-    ' Add a string, a number, an object
-    container.Add "Hello World"
-    container.Add 5
-    container.Add ActiveWorkbook.Sheets(1)
-    
-    ' Add several records at once
-    '   This will add each item as a new record
-    container.Add "Hello", "World", "How", "Are", "You", "?"
-    
-    ' Add a array child
-    '   This will created a nested array
-    container.AddAsArray "Hello", "World", "How", "Are", "You", "Again", "?"
-    
-    container.Add "I am the last item"
+    Dim container As List
+    Set container = GenerateList
     
     ' Remove the a range of items starting at the 3rd index
     '   Removes 5 items; The first item is included the item at the index.
     '   i.e. container.RemoveRange 3, 1 would remove 1 item - the item at the 3rd index
     container.RemoveRange 3, 5
-
-    ' Print the items in the list to the immediate window
-    Debug.Print "Items:", container.Count
     
-    For x = container.LowerBound To container.UpperBound
-        If IsObject(container(x)) Then
-            ' If the item is an Object
-            Debug.Print x, "Object", TypeName(container(x))
-        Else
-            
-            If VarType(container(x)) >= vbArray Then
-                ' If the item is an Array
-                Debug.Print x, "Array"
-                For y = LBound(container(x)) To UBound(container(x))
-                    Debug.Print "", y, TypeName(container(x)(y)), container(x)(y)
-                Next
-            Else
-                ' If the item is a primitive type (String, Integer, Long, etc)
-                Debug.Print x, TypeName(container(x)), container(x)
-            End If
-        End If
-    Next
+    PrintListItems container
 
     ' Prints:
     '   Items:         6 
@@ -372,7 +366,6 @@ Private Sub Demo()
     '                  4            String        You
     '                  5            String        Again
     '                  6            String        ?
-    '    10           String        I am the last item      
-
+    '    10           String        I am the last item         
 End Sub
 ```
