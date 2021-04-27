@@ -130,15 +130,16 @@ End Sub
 ''' Summary:
 '''     Removes an item by an index.
 ''' Parameters:
-'''     ByRef Index As Variant: The index to remove.
-Public Sub Remove(ByRef Index As Long)
-    Dim x     As Long
-    Dim i     As Long
+'''     ByVal Index As Long: The index to remove.
+Public Sub Remove(ByVal Index As Long)
+    Dim i As Long
     
-    If Index > UBound(Items) Or Index < LBound(Items) Then 
+    ' Validation
+    If Index > UBound(Items) Or Index < LBound(Items) Then
         Exit Sub
     End If
 
+    ' Move the items in the array
     For i = Index To UBound(Items) - 1
         If IsObject(Items(i + 1)) Then
             Set Items(i) = Items(i + 1)
@@ -146,9 +147,45 @@ Public Sub Remove(ByRef Index As Long)
             Items(i) = Items(i + 1)
         End If
     Next
-
+    
+    ' Resize the items array
     ReDim Preserve Items(LBound(Items) To UBound(Items) - 1)
 End Sub
+
+
+''' Summary:
+'''     Removes a range of items by an index range.
+''' Parameters:
+'''     ByVal Index As Long: The index to start at.
+'''     ByVal NumberOfItems As Long: The number of items to remove.
+'''         This includes the item at the Index
+Public Sub RemoveRange(ByVal Index As Long, ByVal NumberOfItems As Long)
+    Dim i As Long
+    
+    ' Validation
+    If Index > UBound(Items) Or Index < LBound(Items) Then Exit Sub
+    If NumberOfItems <= 0 Then Exit Sub
+    
+    ' If the number of items to remove exceeds the index of the last item
+    '   Then remove all items after the index
+    If Index + NumberOfItems > UBound(Items) Then
+        ReDim Preserve Items(LBound(Items) To Index - 1)
+        Exit Sub
+    End If
+    
+    ' Move the items in the array
+    For i = Index To UBound(Items) - NumberOfItems
+        If IsObject(Items(i + NumberOfItems)) Then
+            Set Items(i) = Items(i + NumberOfItems)
+        Else
+            Items(i) = Items(i + NumberOfItems)
+        End If
+    Next
+
+    ' Resize the items array
+    ReDim Preserve Items(LBound(Items) To UBound(Items) - NumberOfItems)
+End Sub
+
 
 
 ''' Summary:

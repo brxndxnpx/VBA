@@ -17,12 +17,13 @@ Can be used for creating complex nested arrays.
 
 ## Methods & Functions
 
-|                             | Type | Description                                                                               |
-|-----------------------------|------|-------------------------------------------------------------------------------------------|
-| [`Add`](#add)               |      | Adds item(s) to the list. Will add each item as a new record.                             |
-| [`AddAsArray`](#addasarray) |      | Adds an item to the list. Will nest the items into an array if multiple items are passed. |
-| [`Remove`](#remove)         |      | Removes an item by an index.                                                              |
-| [`Clear`](#clear)           |      | Clears the items in the List.                                                             |
+|                               | Type | Description                                                                               |
+|-------------------------------|------|-------------------------------------------------------------------------------------------|
+| [`Add`](#add)                 |      | Adds item(s) to the list. Will add each item as a new record.                             |
+| [`AddAsArray`](#addasarray)   |      | Adds an item to the list. Will nest the items into an array if multiple items are passed. |
+| [`Remove`](#remove)           |      | Removes an item by an index.                                                              |
+| [`RemoveRange`](#removerange) |      | Removes a range of items by an index range.                                               |
+| [`Clear`](#clear)             |      | Clears the items in the List.                                                             |
 
 ---
 
@@ -52,10 +53,23 @@ Adds an item to the list.
 Removes an item by an index.
 
 **Parameters**
-- `Index` `ByRef` `Long`
+- `Index` `ByVal` `Long`
     - The index to remove.
 
-### [`Clear`](List.cls#L156)
+
+### [`RemoveRange`](List.cls#L162)
+
+Removes a range of items by an index range.
+
+**Parameters**
+- `Index` `ByVal` `Long`
+    - The index to start at.
+- `NumberOfItems` `ByVal` `Long`
+    - The number of items to remove.
+    - This includes the item at the Index
+
+
+### [`Clear`](List.cls#L193)
 
 Clears the list.
 
@@ -108,6 +122,8 @@ Attribute Item.VB_UserMemId = 0
 ---
 
 ## Usage
+
+### Adding Items
 
 ```vb
 Private Sub Demo()
@@ -172,6 +188,191 @@ Private Sub Demo()
     '                  5            String        Again
     '                  6            String        ?
     '    10           String        I am the last item    
+
+End Sub
+```
+
+### Removing Items
+
+This snippet removes the first and last items using the `Remove()` method.
+
+```vb
+Private Sub Demo()
+    Dim container As New List
+    Dim x As Long
+    Dim y As Long
+    
+    ' Add a string, a number, an object
+    container.Add "Hello World"
+    container.Add 5
+    container.Add ActiveWorkbook.Sheets(1)
+    
+    ' Add several records at once
+    '   This will add each item as a new record
+    container.Add "Hello", "World", "How", "Are", "You", "?"
+    
+    ' Add a array child
+    '   This will created a nested array
+    container.AddAsArray "Hello", "World", "How", "Are", "You", "Again", "?"
+    
+    container.Add "I am the last item"
+    
+    ' Remove the first and last items
+    container.Remove container.LowerBound
+    container.Remove container.UpperBound
+
+    ' Print the items in the list to the immediate window
+    Debug.Print "Items:", container.Count
+    
+    For x = container.LowerBound To container.UpperBound
+        If IsObject(container(x)) Then
+            ' If the item is an Object
+            Debug.Print x, "Object", TypeName(container(x))
+        Else
+            
+            If VarType(container(x)) >= vbArray Then
+                ' If the item is an Array
+                Debug.Print x, "Array"
+                For y = LBound(container(x)) To UBound(container(x))
+                    Debug.Print "", y, TypeName(container(x)(y)), container(x)(y)
+                Next
+            Else
+                ' If the item is a primitive type (String, Integer, Long, etc)
+                Debug.Print x, TypeName(container(x)), container(x)
+            End If
+        End If
+    Next
+
+    ' Prints:
+    '   Items:         9 
+    '    0            Integer        5 
+    '    1            Object        Worksheet
+    '    2            String        Hello
+    '    3            String        World
+    '    4            String        How
+    '    5            String        Are
+    '    6            String        You
+    '    7            String        ?
+    '    8            Array
+    '                  0            String        Hello
+    '                  1            String        How
+    '                  2            String        Are
+    '                  3            String        You
+    '                  4            String        Again
+    '                  5            String        ?
+
+    ' Items Before Removals:
+    '   Items:         11 
+    '    0            String        Hello World
+    '    1            Integer        5 
+    '    2            Object        Worksheet
+    '    3            String        Hello
+    '    4            String        World
+    '    5            String        How
+    '    6            String        Are
+    '    7            String        You
+    '    8            String        ?
+    '    9            Array
+    '                  0            String        Hello
+    '                  1            String        World
+    '                  2            String        How
+    '                  3            String        Are
+    '                  4            String        You
+    '                  5            String        Again
+    '                  6            String        ?
+    '    10           String        I am the last item  
+
+End Sub
+```
+
+This snippet removes a range of items using the `RemoveRange()` method.
+- This example removes 5 items starting at the index.
+    - i.e. `container.RemoveRange 3, 1` would remove 1 item - the item at the 3rd index.
+    - This would be the same as `container.Remove 3`
+
+```vb
+Private Sub Demo()
+    Dim container As New List
+    Dim x As Long
+    Dim y As Long
+    
+    ' Add a string, a number, an object
+    container.Add "Hello World"
+    container.Add 5
+    container.Add ActiveWorkbook.Sheets(1)
+    
+    ' Add several records at once
+    '   This will add each item as a new record
+    container.Add "Hello", "World", "How", "Are", "You", "?"
+    
+    ' Add a array child
+    '   This will created a nested array
+    container.AddAsArray "Hello", "World", "How", "Are", "You", "Again", "?"
+    
+    container.Add "I am the last item"
+    
+    ' Remove the a range of items starting at the 3rd index
+    '   Removes 5 items; The first item is included the item at the index.
+    '   i.e. container.RemoveRange 3, 1 would remove 1 item - the item at the 3rd index
+    container.RemoveRange 3, 5
+
+    ' Print the items in the list to the immediate window
+    Debug.Print "Items:", container.Count
+    
+    For x = container.LowerBound To container.UpperBound
+        If IsObject(container(x)) Then
+            ' If the item is an Object
+            Debug.Print x, "Object", TypeName(container(x))
+        Else
+            
+            If VarType(container(x)) >= vbArray Then
+                ' If the item is an Array
+                Debug.Print x, "Array"
+                For y = LBound(container(x)) To UBound(container(x))
+                    Debug.Print "", y, TypeName(container(x)(y)), container(x)(y)
+                Next
+            Else
+                ' If the item is a primitive type (String, Integer, Long, etc)
+                Debug.Print x, TypeName(container(x)), container(x)
+            End If
+        End If
+    Next
+
+    ' Prints:
+    '   Items:         6 
+    '    0            String        Hello World
+    '    1            Integer        5 
+    '    2            Object        Worksheet
+    '    3            String        ?
+    '    4            Array
+    '                  0            String        Hello
+    '                  1            String        How
+    '                  2            String        Are
+    '                  3            String        You
+    '                  4            String        Again
+    '                  5            String        ?
+    '    5            String        I am the last item
+
+    ' Items Before Removals:
+    '   Items:         11 
+    '    0            String        Hello World
+    '    1            Integer        5 
+    '    2            Object        Worksheet
+    '    3            String        Hello
+    '    4            String        World
+    '    5            String        How
+    '    6            String        Are
+    '    7            String        You
+    '    8            String        ?
+    '    9            Array
+    '                  0            String        Hello
+    '                  1            String        World
+    '                  2            String        How
+    '                  3            String        Are
+    '                  4            String        You
+    '                  5            String        Again
+    '                  6            String        ?
+    '    10           String        I am the last item      
 
 End Sub
 ```
