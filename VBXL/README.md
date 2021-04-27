@@ -15,7 +15,6 @@ An Acrobat class that is used to combine PDFs and convert files (e.g. images) to
 
 - Requires Adobe Acrobat DC to be installed on the user's machine.
 
----
 
 ### [ColorInfo](/VBXL/Classes/ColorInfo/)
 
@@ -28,7 +27,6 @@ The color information will change in sync with the last updated property.
 This class/object is primarily used to convert colors, e.g. from RGB to hex.
 - Of course, the methods/functions in the class object can also be set as functions in a module.
 
----
 
 ### [Dictionary](/VBXL/Classes/Dictionary/)
 
@@ -40,7 +38,6 @@ Allows using the `Scripting.Dictionary` object with intellisense without having 
 
 You can also store other objects in the dictionary.
 
----
 
 ### [FileSystem](/VBXL/Classes/FileSystem/)
 
@@ -59,7 +56,6 @@ Dependencies:
 - The `DownloadDocument` method requires the [DynamicLinkLibraries.bas](/VBXL/Modules/DynamicLinkLibraries/DynamicLinkLibraries.bas) to be included in the project.
     - This method can be removed otherwise.
 
----
 
 ### [StringBuilder](/VBXL/Classes/StringBuilder/)
 
