@@ -20,6 +20,7 @@ VBA modules, classes, and code snippets for Microsoft Office Applications (Excel
 - [ObjectInspector](/VBXL/Modules/ObjectInspector/)
 - [ShellCommand](/VBXL/Modules/ShellCommand/)
 - [TextStreamer](/VBXL/Modules/TextStreamer/)
+- [TypeValidation](/VBXL/Modules/TypeValidation/)
 
 ## VBOL (Outlook)
 

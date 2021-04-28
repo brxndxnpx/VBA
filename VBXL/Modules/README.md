@@ -41,3 +41,7 @@ Recommended to be used in conjunction with...
 - [FileSystem.cls](/VBXL/Classes/FileSystem/FileSystem.cls) class for easier file access.
 - [StringBuilder.cls](/VBXL/Classes/StringBuilder/StringBuilder.cls) class for easier text readability.
     - You can use the `StringBuilder.AppendArray()` to inject the text array into the `StringBuilder` object when reading a file.
+
+### [TypeValidation](/VBXL/Modules/TypeValidation/)
+
+Generic validation for objects/variables.    
