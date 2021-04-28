@@ -15,10 +15,13 @@ If you have any requests or ideas for modules/class then let me know :smile:.
 - [ColorInfo](/VBXL/Classes/ColorInfo/)
 - [Dictionary](/VBXL/Classes/Dictionary/)
 - [FileSystem](/VBXL/Classes/FileSystem/)
+- [JsonConverter](/VBXL/Classes/JsonConverter/)
 - [List](/VBXL/Classes/List/)
 - [OutlookApp](/VBXL/Classes/OutlookApp/)
-- [StringBuilder](/VBXL/Classes/StringBuilder/)
+- [RegExp](/VBXL/Classes/RegExp/)
 - [SqlAccessor](/VBXL/Classes/SqlAccessor/)
+- [StringBuilder](/VBXL/Classes/StringBuilder/)
+- [WebRequest](/VBXL/Classes/WebRequest/)
 
 **Modules**
 - [Arry](/VBXL/Modules/Arry/)

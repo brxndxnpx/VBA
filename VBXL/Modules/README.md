@@ -1,4 +1,4 @@
-# Modules
+## Modules
 
 Static modules created for easing VBA development.
 
@@ -6,6 +6,7 @@ I tried to decouple these modules as much as I could for individual classes or m
 - There may still be dependencies since some classes work better with some modules.
 - e.g. The [FileSystem.cls](/VBXL/Classes/FileSystem/FileSystem.cls) class works well with the [Environment.bas](/VBXL/Modules/Environment/Environment.bas) module for easy path access.
 
+---
 
 ### [Arry](/VBXL/Modules/Arry/)
 
@@ -17,6 +18,7 @@ Works with arrays with a base of 0 or 1.
 You can override the 0 base index by using the `Option Base` statement at the top of the module.
 - See MSDN documentation [here](https://docs.microsoft.com/en-us/office/vba/language/reference/user-interface-help/option-base-statement).
 
+---
 
 ### [ColorSwatches](/VBXL/Modules/ColorSwatches/)
 
@@ -27,17 +29,25 @@ Enumerated color values.
 - Color codes prefixed with "A" are _accent_ colors.
     - i.e. `ColorSwatch.AmberA700`
 
+---
+
 ### [Environment](/VBXL/Modules/Environment/)
 
 Environment functions pertaining to the user and the user's machine.
+
+---
 
 ### [ObjectInspector](/VBXL/Modules/ObjectInspector/)
 
 Used to inspect objects and retrieve their methods, functions, and properties.
 
+---
+
 ### [ShellCommand](/VBXL/Modules/ShellCommand/)
 
 Basic shell commands.
+
+---
 
 ### [TextStreamer](/VBXL/Modules/TextStreamer/)
 
@@ -49,6 +59,8 @@ Recommended to be used in conjunction with...
 - [StringBuilder.cls](/VBXL/Classes/StringBuilder/StringBuilder.cls) class for easier text readability.
     - You can use the `StringBuilder.AppendArray()` to inject the text array into the `StringBuilder` object when reading a file.
 
+---
+
 ### [TypeValidation](/VBXL/Modules/TypeValidation/)
 
-Generic validation for objects/variables.    
+Generic validation for objects/variables.        
