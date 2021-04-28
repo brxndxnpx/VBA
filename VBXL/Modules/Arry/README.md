@@ -134,8 +134,8 @@ Private Sub Demo()
     ' Append the variables to the array (Source)
     ArryAppend Source, example_String, example_Integer, example_Object
 
-    ' Remove the item at the 2nd index: example_Integer
-    ArryRemove Source, 2
+    ' Remove the item at the 3rd index: example_Integer
+    ArryRemove Source, 3
 
     ' Print the items to the immediate window
     ArryDebug Source
