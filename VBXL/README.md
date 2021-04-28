@@ -56,6 +56,9 @@ A array based class that is intended to make managing arrays easier by resizing 
 
 Can be used for creating complex nested arrays.
 
+Was primarily made to give the user friendliness a `Collection` gives, but without sacrificing speed when iterating through items.
+- An `Array` is faster than a `Collection`.
+
 ### [OutlookApp](/VBXL/Classes/OutlookApp/)
 
 A late bound object made to utilize Outlook functionalities from Excel.

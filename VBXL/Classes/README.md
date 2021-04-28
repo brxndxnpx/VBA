@@ -46,18 +46,15 @@ Allows using the `Scripting.FileSystemObject` object with intellisense without h
 
 Recommended to be used in conjunction with...
 - [Environment.bas](/VBXL/Modules/Environment/Environment.bas) module for easier file path access.
-- [DynamicLinkLibraries.bas](/VBXL/Modules/DynamicLinkLibraries/DynamicLinkLibraries.bas) module for downloading documents via URL.
-
-Dependencies:
-[DynamicLinkLibraries.bas](/VBXL/Modules/DynamicLinkLibraries/DynamicLinkLibraries.bas)
-- The `DownloadDocument` method requires the [DynamicLinkLibraries.bas](/VBXL/Modules/DynamicLinkLibraries/DynamicLinkLibraries.bas) to be included in the project.
-    - This method can be removed otherwise.
 
 ### [List](/VBXL/Classes/List/)
 
 A array based class that is intended to make managing arrays easier by resizing whenever an item is added or removed.
 
 Can be used for creating complex nested arrays.
+
+Was primarily made to give the user friendliness a `Collection` gives, but without sacrificing speed when iterating through items.
+- An `Array` is faster than a `Collection`.
 
 ### [OutlookApp](/VBXL/Classes/OutlookApp/)
 

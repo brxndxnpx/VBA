@@ -1,6 +1,13 @@
 # VBA
 VBA modules, classes, and code snippets for Microsoft Office Applications (Excel, Word, Outlook, etc).
 
+- Each class or module should be decoupled enough to be usable on it's own.
+    - If you find an issue or a class/module that depends on another class/module please let me know.
+
+
+If you have any requests or ideas for modules/class then let me know :smile:.
+
+
 ## VBXL (Excel)
 
 **Classes**
