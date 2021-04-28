@@ -141,8 +141,8 @@ Private Sub Demo()
     ArryDebug Source
 
     ' Prints:
+    '   String        Oh NO!
     '   String        HELLO WORLD
-    '   Long           1090 
     '   Object        Dictionary
 End Sub
 ```
