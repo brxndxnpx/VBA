@@ -9,10 +9,16 @@ Option Explicit
 '''     - This will alleviate that issue by using late-binding.
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
+' #If VBA7 Then
+'     Private Declare PtrSafe Function URLDownloadToFileA Lib "UrlMon" (ByVal pCaller As LongPtr, ByVal szURL As String, ByVal szFileName As String, ByVal dwReserved As LongPtr, ByVal lpfnCB As LongPtr) As LongPtr
+' #Else
+'     Private Declare Function URLDownloadToFileA Lib "UrlMon" ( ByVal pCaller As Long, ByVal szURL As String, ByVal szFileName As String, ByVal dwReserved As Long, ByVal lpfnCB As Long) As Long
+' #End If
+
 #If VBA7 Then
-    Private Declare PtrSafe Function URLDownloadToFileA Lib "UrlMon" (ByVal pCaller As LongPtr, ByVal szURL As String, ByVal szFileName As String, ByVal dwReserved As LongPtr, ByVal lpfnCB As LongPtr) As LongPtr
+    Private Declare PtrSafe Function URLDownloadToFile Lib "UrlMon" Alias "URLDownloadToFileA" (ByVal pCaller As LongPtr, ByVal szURL As String, ByVal szFileName As String, ByVal dwReserved As LongPtr, ByVal lpfnCB As LongPtr) As LongPtr
 #Else
-    Private Declare Function URLDownloadToFileA Lib "UrlMon" ( ByVal pCaller As Long, ByVal szURL As String, ByVal szFileName As String, ByVal dwReserved As Long, ByVal lpfnCB As Long) As Long
+    Private Declare Function URLDownloadToFile Lib "UrlMon" Alias "URLDownloadToFileA" ( ByVal pCaller As Long, ByVal szURL As String, ByVal szFileName As String, ByVal dwReserved As Long, ByVal lpfnCB As Long) As Long
 #End If
 
 
@@ -297,7 +303,7 @@ Public Function DownloadDocument(ByRef DocumentName As String, ByRef DocumentPat
     End If
 
     '   Downloads/saves the PDF to a location
-    URLDownloadToFileA 0, DocumentPath, targetLocation, 0, 0
+    URLDownloadToFile 0, DocumentPath, targetLocation, 0, 0
 End Function
 
 ''' Summary:
