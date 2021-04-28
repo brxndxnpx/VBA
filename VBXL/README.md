@@ -9,7 +9,6 @@ I tried to decouple these objects as much as I could for individual classes or m
 - There may still be dependencies since some classes work better with some modules.
 - e.g. The [FileSystem.cls](/VBXL/Classes/FileSystem/FileSystem.cls) class works well with the [Environment.bas](/VBXL/Modules/Environment/Environment.bas) module for easy path access.
 
----
 
 ## [AcroApp](/VBXL/Classes/AcroApp/)
 
@@ -17,7 +16,6 @@ An Acrobat class that is used to combine PDFs and convert files (e.g. images) to
 
 - Requires Adobe Acrobat DC to be installed on the user's machine.
 
----
 
 ## [ColorInfo](/VBXL/Classes/ColorInfo/)
 
@@ -30,7 +28,6 @@ The color information will change in sync with the last updated property.
 This class/object is primarily used to convert colors, e.g. from RGB to hex.
 - Of course, the methods/functions in the class object can also be set as functions in a module.
 
----
 
 ## [Dictionary](/VBXL/Classes/Dictionary/)
 
@@ -42,7 +39,6 @@ Allows using the `Scripting.Dictionary` object with intellisense without having 
 
 You can also store other objects in the dictionary.
 
----
 
 ## [FileSystem](/VBXL/Classes/FileSystem/)
 
@@ -55,7 +51,6 @@ Allows using the `Scripting.FileSystemObject` object with intellisense without h
 Recommended to be used in conjunction with...
 - [Environment.bas](/VBXL/Modules/Environment/Environment.bas) module for easier file path access.
 
----
 
 ## [JsonConverter](/VBXL/Classes/JsonConverter/)
 
@@ -63,7 +58,6 @@ A class created for parsing JSON strings.
 - Stores the object in a dictionary.
 - Uses dot notation to access nested properties
 
----
 
 ## [List](/VBXL/Classes/List/)
 
@@ -74,7 +68,6 @@ Was primarily made to give the user friendliness a `Collection` gives, but witho
 
 Can be used for creating complex nested arrays.
 
----
 
 ## [OutlookApp](/VBXL/Classes/OutlookApp/)
 
@@ -83,13 +76,11 @@ A late bound object made to utilize Outlook functionalities from Excel.
     - The `Outlook.Application` object.
 - Uses the accounts on the user's Outlook application.
 
----
 
 ## [RegExp](/VBXL/Classes/RegExp/)
 
 A class for executing regular expressions utilizing the `VBScript.RegExp` object.
 
----
 
 ## [StringBuilder](/VBXL/Classes/StringBuilder/)
 
@@ -101,7 +92,6 @@ A string building class that utilizes the `Scripting.Dictionary` object.
 
 This class is useful for building lengthy complex or formatted text, like an XML document.
 
----
 
 ## [WebRequest](/VBXL/Classes/WebRequest/)
 
@@ -114,7 +104,6 @@ A late-binding wrapper class to execute web requests using the `WinHttp.WinHttpR
 Recommended to be used in conjunction with...
 - [JsonConverter.cls](/VBXL/Classes/JsonConverter/JsonConverter.cls) class to parse JSON results.
 
----
 
 ## [SqlAccessor](/VBXL/Classes/SqlAccessor/)
 
@@ -134,7 +123,6 @@ I tried to decouple these modules as much as I could for individual classes or m
 - There may still be dependencies since some classes work better with some modules.
 - e.g. The [FileSystem.cls](/VBXL/Classes/FileSystem/FileSystem.cls) class works well with the [Environment.bas](/VBXL/Modules/Environment/Environment.bas) module for easy path access.
 
----
 
 ## [Arry](/VBXL/Modules/Arry/)
 
@@ -146,7 +134,6 @@ Works with arrays with a base of 0 or 1.
 You can override the 0 base index by using the `Option Base` statement at the top of the module.
 - See MSDN documentation [here](https://docs.microsoft.com/en-us/office/vba/language/reference/user-interface-help/option-base-statement).
 
----
 
 ## [ColorSwatches](/VBXL/Modules/ColorSwatches/)
 
@@ -157,25 +144,21 @@ Enumerated color values.
 - Color codes prefixed with "A" are _accent_ colors.
     - i.e. `ColorSwatch.AmberA700`
 
----
 
 ## [Environment](/VBXL/Modules/Environment/)
 
 Environment functions pertaining to the user and the user's machine.
 
----
 
 ## [ObjectInspector](/VBXL/Modules/ObjectInspector/)
 
 Used to inspect objects and retrieve their methods, functions, and properties.
 
----
 
 ## [ShellCommand](/VBXL/Modules/ShellCommand/)
 
 Basic shell commands.
 
----
 
 ## [TextStreamer](/VBXL/Modules/TextStreamer/)
 
@@ -187,7 +170,6 @@ Recommended to be used in conjunction with...
 - [StringBuilder.cls](/VBXL/Classes/StringBuilder/StringBuilder.cls) class for easier text readability.
     - You can use the `StringBuilder.AppendArray()` to inject the text array into the `StringBuilder` object when reading a file.
 
----
 
 ## [TypeValidation](/VBXL/Modules/TypeValidation/)
 
