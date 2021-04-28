@@ -52,12 +52,13 @@ Recommended to be used in conjunction with...
 
 ### [List](/VBXL/Classes/List/)
 
-A array based class that is intended to make managing arrays easier by resizing whenever an item is added or removed.
-
-Can be used for creating complex nested arrays.
+A array based class that is intended to make managing arrays easier by automatically resizing whenever an item is added or removed.
 
 Was primarily made to give the user friendliness a `Collection` gives, but without sacrificing speed when iterating through items.
 - An `Array` is faster than a `Collection`.
+
+Can be used for creating complex nested arrays.
+
 
 ### [OutlookApp](/VBXL/Classes/OutlookApp/)
 
