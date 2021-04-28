@@ -1,4 +1,4 @@
-## Classes
+# Classes
 
 Late-bound objects created for easing VBA development.
 
@@ -8,7 +8,7 @@ I tried to decouple these objects as much as I could for individual classes or m
 
 ---
 
-### [AcroApp](/VBXL/Classes/AcroApp/)
+## [AcroApp](/VBXL/Classes/AcroApp/)
 
 An Acrobat class that is used to combine PDFs and convert files (e.g. images) to PDFs.
 
@@ -16,7 +16,7 @@ An Acrobat class that is used to combine PDFs and convert files (e.g. images) to
 
 ---
 
-### [ColorInfo](/VBXL/Classes/ColorInfo/)
+## [ColorInfo](/VBXL/Classes/ColorInfo/)
 
 A color class that contains metadata for RGB, hex, and Microsoft Office's integer (`Long` datatype) color code.
 
@@ -29,7 +29,7 @@ This class/object is primarily used to convert colors, e.g. from RGB to hex.
 
 ---
 
-### [Dictionary](/VBXL/Classes/Dictionary/)
+## [Dictionary](/VBXL/Classes/Dictionary/)
 
 A late-binding wrapper class for the `Scripting.Dictionary` object.
 
@@ -41,7 +41,7 @@ You can also store other objects in the dictionary.
 
 ---
 
-### [FileSystem](/VBXL/Classes/FileSystem/)
+## [FileSystem](/VBXL/Classes/FileSystem/)
 
 A late-binding wrapper class for the `Scripting.FileSystemObject` object.
 
@@ -54,7 +54,7 @@ Recommended to be used in conjunction with...
 
 ---
 
-### [JsonConverter](/VBXL/Classes/JsonConverter/)
+## [JsonConverter](/VBXL/Classes/JsonConverter/)
 
 A class created for parsing JSON strings. 
 - Stores the object in a dictionary.
@@ -62,7 +62,7 @@ A class created for parsing JSON strings.
 
 ---
 
-### [List](/VBXL/Classes/List/)
+## [List](/VBXL/Classes/List/)
 
 A array based class that is intended to make managing arrays easier by automatically resizing whenever an item is added or removed.
 
@@ -73,7 +73,7 @@ Can be used for creating complex nested arrays.
 
 ---
 
-### [OutlookApp](/VBXL/Classes/OutlookApp/)
+## [OutlookApp](/VBXL/Classes/OutlookApp/)
 
 A late bound object made to utilize Outlook functionalities from Excel.
 - Uses the Outlook application on the current user's machine.
@@ -82,13 +82,13 @@ A late bound object made to utilize Outlook functionalities from Excel.
 
 ---
 
-### [RegExp](/VBXL/Classes/RegExp/)
+## [RegExp](/VBXL/Classes/RegExp/)
 
 A class for executing regular expressions utilizing the `VBScript.RegExp` object.
 
 ---
 
-### [StringBuilder](/VBXL/Classes/StringBuilder/)
+## [StringBuilder](/VBXL/Classes/StringBuilder/)
 
 Inspired by the C# .NET `System.Text.StringBuilder` class, but simplified for VBA.
 
@@ -100,7 +100,7 @@ This class is useful for building lengthy complex or formatted text, like an XML
 
 ---
 
-### [WebRequest](/VBXL/Classes/WebRequest/)
+## [WebRequest](/VBXL/Classes/WebRequest/)
 
 A late-binding wrapper class to execute web requests using the `WinHttp.WinHttpRequest` Windows API.
 
@@ -113,9 +113,8 @@ Recommended to be used in conjunction with...
 
 ---
 
-### [SqlAccessor](/VBXL/Classes/SqlAccessor/)
+## [SqlAccessor](/VBXL/Classes/SqlAccessor/)
 
 A late binding object made to execute simple database queries and return the dataset as an array.
 - Uses the `ADODB.Command`, `ADODB.Recordset`, and `ADODB.Connection` objects.
     - See MSDN Documentation [here](https://docs.microsoft.com/en-us/sql/ado/guide/data/creating-and-executing-a-simple-command?view=sql-server-ver15).
-
