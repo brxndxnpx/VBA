@@ -11,6 +11,13 @@ I tried to decouple these modules as much as I could for individual classes or m
 
 Array helper functions.
 
+Works with arrays with a base of 0 or 1.
+- If the array dimensions aren't already set (the array is `Empty`), the resized array will have a base of 0.
+
+You can override the 0 base index by using the `Option Base` statement at the top of the module.
+- See MSDN documentation [here](https://docs.microsoft.com/en-us/office/vba/language/reference/user-interface-help/option-base-statement).
+
+
 ### [ColorSwatches](/VBXL/Modules/ColorSwatches/)
 
 Enumerated color values. 
