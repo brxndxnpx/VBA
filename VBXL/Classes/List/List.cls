@@ -186,8 +186,6 @@ Public Sub RemoveRange(ByVal Index As Long, ByVal NumberOfItems As Long)
     ReDim Preserve Items(LBound(Items) To UBound(Items) - NumberOfItems)
 End Sub
 
-
-
 ''' Summary:
 '''     Clears the items in the List
 Public Sub Clear()

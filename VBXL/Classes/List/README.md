@@ -69,7 +69,7 @@ Removes a range of items by an index range.
     - This includes the item at the Index
 
 
-### [`Clear`](List.cls#L193)
+### [`Clear`](List.cls#L191)
 
 Clears the list.
 
@@ -193,10 +193,11 @@ Private Sub Demo()
 
 End Sub
 ```
+---
 
 ### Removing Items
 
-I'll be using 2 functions/methods in the examples below to prevent writing the same code in each example.
+I'll be using 2 functions/methods in the examples below to prevent rewriting the same code in each example.
 
 The code is the exact same as the example above but split into 2 functions/methods.
 
@@ -314,6 +315,8 @@ Private Sub Demo()
     '    10           String        I am the last item      
 End Sub
 ```
+
+---
 
 This snippet removes a range of items using the `RemoveRange()` method.
 - This example removes 5 items starting at the index.
