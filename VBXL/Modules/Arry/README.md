@@ -85,6 +85,8 @@ Uses `Debug.Print` the print values of the items in the array along with it's da
 
 ## Usage
 
+Passing an array that is `Empty`.
+
 ```vb
 Private Sub Demo()
     Dim Source           As Variant
@@ -100,6 +102,38 @@ Private Sub Demo()
     ' Append the variables to the array (Source)
     ArryAppend Source, example_String, example_Integer, example_Object
 
+    ' Remove the item at the 2nd index: example_Integer (zero based indexing)
+    ArryRemove Source, 1
+
+    ' Print the items to the immediate window
+    ArryDebug Source
+
+    ' Prints:
+    '   String        HELLO WORLD
+    '   Object        Dictionary    
+End Sub
+```
+
+Passing an array with a base index of 1.
+
+```vb
+Private Sub Demo()
+    Dim Source           As Variant
+    Dim example_String   As String
+    Dim example_Integer  As Long
+    Dim example_Object   As Object
+    
+    ' Set the example variables
+    example_String = "HELLO WORLD"
+    example_Integer = 1090
+    Set example_Object = CreateObject("Scripting.Dictionary")
+    
+    ReDim Source(1 To 1)
+    Source(1) = "Oh NO!"
+
+    ' Append the variables to the array (Source)
+    ArryAppend Source, example_String, example_Integer, example_Object
+
     ' Remove the item at the 2nd index: example_Integer
     ArryRemove Source, 2
 
@@ -108,6 +142,7 @@ Private Sub Demo()
 
     ' Prints:
     '   String        HELLO WORLD
-    '   Object        Dictionary    
+    '   Long           1090 
+    '   Object        Dictionary
 End Sub
 ```
