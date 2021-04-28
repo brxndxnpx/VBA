@@ -53,7 +53,8 @@ Private Sub Demo()
     ' Regex pattern
     Const Pattern = """(([^""\\]|\\.)*)""|[+\-]?(?:0|[1-9]\d*)(?:\.\d*)?(?:[eE][+\-]?\d+)?|\w+|[^\s""']+?"
     
-    Json = "{""anime"":""Avatar: The Last Airbender"",""character"":""Sokka"",""quote"":""[to himself as he chops at the ice] I'm just a guy with a boomerang. I didn't ask for all this flying and magic.""}"
+    Json = "{""anime"":""Avatar: The Last Airbender"",""character"":""Sokka"",""quote"":" & _
+        """[to himself as he chops at the ice] I'm just a guy with a boomerang. I didn't ask for all this flying and magic.""}"
     
     ' Exlude quotations
     Results = Re.Execute(Json, Pattern, True)

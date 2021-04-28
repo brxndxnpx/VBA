@@ -103,7 +103,7 @@ This class is useful for building lengthy complex or formatted text, like an XML
 
 ---
 
-# [WebRequest](/VBXL/Classes/WebRequest/)
+### [WebRequest](/VBXL/Classes/WebRequest/)
 
 A late-binding wrapper class to execute web requests using the `WinHttp.WinHttpRequest` Windows API.
 
