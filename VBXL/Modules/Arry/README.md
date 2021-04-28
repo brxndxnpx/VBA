@@ -2,6 +2,13 @@
 
 Array helper functions.
 
+Works with arrays with a base of 0 or 1.
+- If the array dimensions aren't already set (the array is `Empty`), the resized array will have a base of 0.
+
+You can override the 0 base index by using the `Option Base` statement at the top of the module.
+- See MSDN documentation [here](https://docs.microsoft.com/en-us/office/vba/language/reference/user-interface-help/option-base-statement).
+
+
 ## Methods & Functions
 
 |                             | Description                                                                                                         |
@@ -26,7 +33,7 @@ Appends items to an array.
 
 ---
 
-### [`ArryResize`](Arry.bas#L14)
+### [`ArryResize`](Arry.bas#L32)
 
 Resizes an array. Will instantiate a new array if the array is empty.
 
@@ -40,7 +47,7 @@ Resizes an array. Will instantiate a new array if the array is empty.
 
 ---
 
-### [`ArryRemove`](Arry.bas#L53)
+### [`ArryRemove`](Arry.bas#L54)
 
 Removes an item from an array and resizes it.
 
@@ -53,7 +60,7 @@ Removes an item from an array and resizes it.
 ---
 
 
-### [`ArryCount`](Arry.bas#L73)
+### [`ArryCount`](Arry.bas#L74)
 
 Counts the items in an array.
 
@@ -66,7 +73,7 @@ Counts the items in an array.
 
 ---
 
-### [`ArryDebug`](Arry.bas#L85)
+### [`ArryDebug`](Arry.bas#L92)
 
 Uses `Debug.Print` the print values of the items in the array along with it's data type to the immediate window.
 
