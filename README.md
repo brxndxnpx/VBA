@@ -4,11 +4,16 @@ VBA modules, classes, and code snippets for Microsoft Office Applications (Excel
 - Each class or module should be decoupled enough to be usable on it's own.
     - If you find an issue or a class/module that depends on another class/module please let me know.
 
+## Background
 
-If you have any requests or ideas for modules/class then let me know :smile:.
+I started this repo to log and share my collection of VBA snippets. I got tired of searching through my old projects to find snippets of code I've previously used. I finally decided to create a public repository for those classes, modules, and snippets that I reuse on the regular and to document each item.
+
+If you have any requests or ideas for modules/class, or if you you find issues then let me know :smile:.
 
 
-## VBXL (Excel)
+## Contents
+
+### VBXL (Excel)
 
 **Classes**
 - [AcroApp](/VBXL/Classes/AcroApp/)
@@ -32,11 +37,11 @@ If you have any requests or ideas for modules/class then let me know :smile:.
 - [TextStreamer](/VBXL/Modules/TextStreamer/)
 - [TypeValidation](/VBXL/Modules/TypeValidation/)
 
-## VBOL (Outlook)
+### VBOL (Outlook)
 
 - TBD
 
-## VBWD (Word)
+### VBWD (Word)
 
 - TBD
 
