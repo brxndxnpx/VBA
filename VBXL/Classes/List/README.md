@@ -131,9 +131,9 @@ Attribute Item.VB_UserMemId = 0
 
 ```vb
 Private Sub Demo()
-    Dim container As New List
-    Dim x As Long
-    Dim y As Long
+    Dim container   As New List
+    Dim x           As Long
+    Dim y           As Long
     
     ' Add a string, a number, an object
     container.Add "Hello World"

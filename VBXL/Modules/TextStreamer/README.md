@@ -31,13 +31,13 @@ The below snippet will...
 
 ```vb
 Private Sub Demo()
-    Dim filename_ As String
-    Dim FS As Object
-    Dim desktop_ As String
-    Dim filepath_ As String
-    Dim writeText_ As String
-    Dim readText_ As Variant ' The output of ReadFile() is an array
-    Dim i As Long
+    Dim filename_   As String
+    Dim FS          As Object
+    Dim desktop_    As String
+    Dim filepath_   As String
+    Dim writeText_  As String
+    Dim readText_   As Variant ' The output of ReadFile() is an array
+    Dim i           As Long
     
     ' Set the name of the file that's to be created
     filename_ = "Sample Text File.txt"

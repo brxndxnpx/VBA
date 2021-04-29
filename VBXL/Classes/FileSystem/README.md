@@ -74,10 +74,10 @@ Without [Environment.bas](/VBXL/Modules/Environment/Environment.bas).
 
 ```vb
 Private Sub Demo()
-    Dim FS As New FileSystem
-    Dim files_ As Variant
-    Dim i As Long
-    Dim desktop_ As String
+    Dim FS           As New FileSystem
+    Dim files_       As Variant
+    Dim i            As Long
+    Dim desktop_     As String
 
     ' Checks if the user is using OneDrive
     '   If true, then use the Desktop folder in the user's OneDrive folder.

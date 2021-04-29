@@ -83,7 +83,7 @@ Attribute Item.VB_UserMemId = 0
 
 ```vb
 Public Sub Demo()
-    Dim d as New Dictionary
+    Dim d As New Dictionary
 
     d.Add 1, "Hello"
     d.Add "3", "World"

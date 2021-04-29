@@ -44,8 +44,8 @@ The example below demonstrates how to execute a query with this object.
 
 ```vb
 Private Sub Demo()
-    Dim sql As New SqlAccessor
-    Dim results As Variant
+    Dim sql       As New SqlAccessor
+    Dim results   As Variant
 
     ' A dummy connection string
     sql.ConnectionString = "DRIVER=SQL Server; UID=ExampleUsername; " & _

@@ -56,10 +56,10 @@ End Sub
 
 ```vb
 Private Sub Demo()
-    Dim s As New StringBuilder
-    Dim title_ As String: title_ = "Check this out"
-    Dim h1_ As String: h1_ = "HELLO WORLD!!!"
-    Dim btnText_ As String: btnText_ = "Click Me!!!!"
+    Dim s          As New StringBuilder
+    Dim title_     As String: title_ = "Check this out"
+    Dim h1_        As String: h1_ = "HELLO WORLD!!!"
+    Dim btnText_   As String: btnText_ = "Click Me!!!!"
     
     s.AppendLine "<!DOCTYPE html>"
     s.AppendLine "<html>"

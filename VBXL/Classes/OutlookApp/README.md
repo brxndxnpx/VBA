@@ -78,8 +78,8 @@ Creates an Outlook draft.
 
 ```vb
 Private Sub Demo()
-    Dim App As New OutlookApp
-    ReDim Attachments(1) As Variant
+    Dim App                 As New OutlookApp
+    ReDim Attachments(1)    As Variant
 
     ' The attachments have to consist of a FULL file path
     Attachments(0) = "Some file to attach1.jpg"

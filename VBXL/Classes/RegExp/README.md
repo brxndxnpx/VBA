@@ -45,10 +45,10 @@ This example will parse this json text and tokenize each match.
 
 ```vb
 Private Sub Demo()
-    Dim Re As New RegExp
-    Dim Results As Variant
-    Dim Json As String
-    Dim i As Long
+    Dim Re        As New RegExp
+    Dim Results   As Variant
+    Dim Json      As String
+    Dim i         As Long
     
     ' Regex pattern
     Const Pattern = """(([^""\\]|\\.)*)""|[+\-]?(?:0|[1-9]\d*)(?:\.\d*)?(?:[eE][+\-]?\d+)?|\w+|[^\s""']+?"
