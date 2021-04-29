@@ -8,7 +8,7 @@ VBA modules, classes, and code snippets for Microsoft Office Applications (Excel
 
 I started this repo to log and share my collection of VBA snippets. I got tired of searching through my old projects to find snippets of code I've previously used. I finally decided to create a public repository for those classes, modules, and snippets that I reuse on the regular and to document each item.
 
-If you have any requests or ideas for modules/class then let me know :smile:.
+If you have any requests or ideas for modules/classes then let me know :smile:.
 
 If you find any issues or figure a better way to do something then let me know about that too!
 
