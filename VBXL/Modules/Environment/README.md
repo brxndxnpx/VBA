@@ -23,7 +23,7 @@ Environment functions pertaining to the user and the user's machine.
 | ProgramFiles64       | The user's 64x program files.                                                  |
 | ExcelLibraryPath     | Excel's default library path.                                                  |
 | ExcelUserLibraryPath | Excel's default user library path.                                             |
-| CPUProcessor         | The CPU/Processor info - whether the user uses 32/63 bit.                      |
+| CPUProcessor         | The CPU/Processor info - whether the user uses 32/64 bit.                      |
 | ExcelStartupPath     | Excel's default startup path. This is where your PERSONAL.XLSB file is stored. |
 | OfficeRibbonPath     | Microsoft office Ribbon path.                                                  |
 

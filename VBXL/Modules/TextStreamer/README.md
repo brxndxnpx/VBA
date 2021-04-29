@@ -2,21 +2,20 @@
 
 Performs basic reads and writes text to files without creating a `Scripting.TextStream` object.
 
-Recommended to be used in conjunction with the [Environment.bas](/VBXL/Modules/Environment/Environment.bas) module for easier file path access.
-
-Recommended to be used in conjunction with the [FileSystem.cls](/VBXL/Classes/FileSystem/FileSystem.cls) class for easier file access.
-
-Recommended to be used in conjunction with the [StringBuilder.cls](/VBXL/Classes/StringBuilder/StringBuilder.cls) class for easier text readability.
-- You can use the `StringBuilder.AppendArray()` to inject the text array into the `StringBuilder` object when reading a file.
-
+Recommended to be used in conjunction with...
+- [Environment.bas](/VBXL/Modules/Environment/Environment.bas) module for easier file path access.
+- [FileSystem.cls](/VBXL/Classes/FileSystem/FileSystem.cls) class for easier file access.
+- [StringBuilder.cls](/VBXL/Classes/StringBuilder/StringBuilder.cls) class for easier text readability.
+    - You can use the `StringBuilder.AppendArray()` to inject the text array into the `StringBuilder` object when reading a file.
+    
 ---
 
 ## Methods/Functions
 
 | Method/Functions | Description                                               |
 |------------------|-----------------------------------------------------------|
-| ReadFile         | Reads the text from a file. Returns the text as an array. |
-| WriteFile        | Writes to a file. Will overwrite the file.           |
+| `ReadFile`       | Reads the text from a file. Returns the text as an array. |
+| `WriteFile`      | Writes to a file. Will overwrite the file.                |
 
 
 ---

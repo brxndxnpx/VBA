@@ -9,8 +9,7 @@ Option Private Module
 ''' Summary
 '''     Combines paths by utilizing Scripting.FileSystemObject.
 Public Function PathCombine(ParamArray Paths() As Variant) As String
-    Dim AppPID As String: AppPID = "Scripting.FileSystemObject"
-    Dim FS     As Object: Set FS = CreateObject(AppPID)
+    Dim FS     As Object: Set FS = CreateObject("Scripting.FileSystemObject")
     Dim i      As Long, output As String
     
     For i = LBound(Paths) To UBound(Paths)
@@ -72,7 +71,7 @@ Public Function ExcelLibraryPath() As String: ExcelLibraryPath = Application.Lib
 Public Function ExcelUserLibraryPath() As String: ExcelUserLibraryPath = Application.UserLibraryPath: End Function
 
 ''' Summary:
-'''     The CPU/Processor info - whether the user uses 32/63 bit.
+'''     The CPU/Processor info - whether the user uses 32/64 bit.
 Public Function CPUProcessor() As String: CPUProcessor = Environ$("PROCESSOR_IDENTIFIER"): End Function
 
 ''' Summary:
