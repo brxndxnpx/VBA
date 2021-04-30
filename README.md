@@ -1,8 +1,9 @@
 # VBA
 VBA modules, classes, and code snippets for Microsoft Office Applications (Excel, Word, Outlook, etc).
 
+Most of the files in this repo are object-oriented.
+- You will see more classes than modules.
 - Each class or module should be decoupled enough to be usable on it's own.
-    - If you find an issue or a class/module that depends on another class/module please let me know.
 
 # Background
 
