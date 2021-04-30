@@ -15,23 +15,14 @@ Option Explicit
 '''     A String; The text returned in a pair of quotes.
 Public Function QUOTE(ByVal Source As String, Optional Character As String = """") As String
     If Len(Character) > 1 Then
-        Dim Str     As New StringBuilder
-        Dim Spaces  As Long
+        Dim Spaces  As String
         Dim i       As Long
         
-        Spaces = CHARCOUNT(Character, " ")
+        For i = 1 To CHARCOUNT(Character, " ")
+            Spaces = Spaces & " "
+        Next
         
-        Str.Append Left(Character, 1)
-        If Spaces > 0 Then
-            For i = 1 To Spaces: Str.Append " ": Next
-            Str.Append Source
-            For i = 1 To Spaces: Str.Append " ": Next
-        Else
-            Str.Append Source
-        End If
-        Str.Append Right(Character, 1)
-        
-        QUOTE = Str.ToString
+        QUOTE = Left(Character, 1) & Spaces & Source & Spaces & Right(Character, 1)
     Else
         QUOTE = Character & Source & Character
     End If
