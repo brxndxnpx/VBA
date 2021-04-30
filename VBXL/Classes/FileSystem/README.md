@@ -48,47 +48,49 @@ The `GetSpecialFolder` uses a numbered index.
 
 ---
 
+
+
 ## Usage
 
 This will get all files on the user's desktop (not files in sub-folders) and prints them to the immediate window.
-- The `Desktop` function used below is referenced in [Environment.bas](/VBXL/Modules/Environment/Environment.bas).
-
-With [Environment.bas](/VBXL/Modules/Environment/Environment.bas).
-
-```vb
-Private Sub Demo()
-    Dim FS As New FileSystem
-    Dim files_ As Variant
-    Dim i As Long
-    
-    ' Gets the file names on the user's desktop
-    files_ = FS.GetFilesInFolder(Environment.Desktop, False)
-    
-    For i = LBound(files_) To UBound(files_)
-        Debug.Print files_(i).Name
-    Next
-End Sub
-```
 
 Without [Environment.bas](/VBXL/Modules/Environment/Environment.bas).
 
 ```vb
 Private Sub Demo()
     Dim FS           As New FileSystem
-    Dim files_       As Variant
+    Dim Files        As Variant
     Dim i            As Long
-    Dim desktop_     As String
+    Dim FolderPath   As String
 
     ' Checks if the user is using OneDrive
     '   If true, then use the Desktop folder in the user's OneDrive folder.
     '   Otherwise use the default windows Desktop folder.
-    desktop_ = FS.BuildPath(IIf(Environ$("OneDrive") <> vbNullString, Environ$("OneDrive"), Environ$("UserProfile")), "Desktop")
+    FolderPath = FS.BuildPath(IIf(Environ$("OneDrive") <> vbNullString, Environ$("OneDrive"), Environ$("UserProfile")), "Desktop")
     
     ' Gets the file names on the user's desktop
-    files_ = FS.GetFilesInFolder(desktop_, False)
+    Files = FS.GetFilesInFolder(FolderPath, False)
     
-    For i = LBound(files_) To UBound(files_)
-        Debug.Print files_(i).Name
+    For i = LBound(Files) To UBound(Files)
+        Debug.Print Files(i).Name
+    Next
+End Sub
+```
+
+With [Environment.bas](/VBXL/Modules/Environment/Environment.bas).
+- The `DesktopPath` function used below is referenced in [Environment.bas](/VBXL/Modules/Environment/Environment.bas).
+
+```vb
+Private Sub Demo()
+    Dim FS      As New FileSystem
+    Dim Files   As Variant
+    Dim i       As Long
+    
+    ' Gets the file names on the user's desktop
+    Files = FS.GetFilesInFolder(Environment.DesktopPath, False)
+    
+    For i = LBound(Files) To UBound(Files)
+        Debug.Print Files(i).Name
     Next
 End Sub
 ```
