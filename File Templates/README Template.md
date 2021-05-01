@@ -11,6 +11,7 @@ Summary
 | ` `      | ``   |             |
 | ` `      | ``   |             |
 
+
 ## Methods & Functions
 
 |          | Type     | Description |
@@ -21,25 +22,32 @@ Summary
 
 ---
 
-### [`Method`](Method.bas#L0)
-
-Summary
+### `Method`
 
 **Parameters**
-- `Param1` `ByRef` `String`
+- `ByRef Param1 String`
     - Description
-- `Param2` `ByVal` `String` [`Optional`]
-    - Description
+
 
 **Returns**
+
 - `Long`: Description
 
----
+**Usage**
 
-## Usage
+<p align="center"><sub><b>VBA</b></sub></p>
 
 ```vb
 Private Sub Demo()
     Debug.Print "Demo"
 End Sub
 ```
+
+<p align="center"><sub><b>Output</b></sub></p>
+
+```
+True
+```
+
+---
+
