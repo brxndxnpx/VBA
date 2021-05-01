@@ -137,11 +137,6 @@ Sheet2        $B$3          Error 2007    =1/0
 
 ### `WorksheetHasErrors`
 
-<p align="center"><sub><b>Sheets 1</b></sub></p>  
-
-<p align="center">
-<img src="resources/demo1.png" >
-</p>
 
 Checks if a Worksheet contains any errors, i.e. `#DIV/0!`, `#REF!`, etc
 
@@ -154,6 +149,13 @@ Checks if a Worksheet contains any errors, i.e. `#DIV/0!`, `#REF!`, etc
 
 
 **Usage**
+
+<p align="center"><sub><b>Sheets 1</b></sub></p>  
+
+<p align="center">
+<img src="resources/demo1.png" >
+</p>
+
 
 <p align="center"><sub><b>VBA</b></sub></p>  
 
