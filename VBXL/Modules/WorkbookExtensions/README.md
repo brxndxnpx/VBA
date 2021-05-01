@@ -4,21 +4,21 @@ Methods and functions for the Workbook and Worksheet objects.
 
 ## Methods & Functions
 
-|                                             | Type      | Description                                                                         |
-|---------------------------------------------|-----------|-------------------------------------------------------------------------------------|
-| [`WorksheetErrors`](#worksheeterrors)       | `Variant` | Gets all of the cells that have errors in a Worksheet, i.e. `#DIV/0!`, `#REF!`, etc |
-| [`WorkbookErrors`](#workbookerrors)         | `Variant` | Gets all of the errors in a Workbook, i.e. `#DIV/0!`, `#REF!`, etc                  |
-| [`WorksheetHasErrors`](#worksheethaserrors) | `Boolean` | Checks if a Worksheet contains any errors, i.e. `#DIV/0!`, `#REF!`, etc             |
-| [`UnhideAllSheets`](#unhideallsheets)       |           | Unhides all sheets in a Workbook.                                                   |
-| [`UnhideSheets`](#unhidesheets)             |           | Unhide Worksheet(s).                                                                |
-| [`HideSheets`](#hidesheets)                 |           | Hide Worksheet(s).                                                                  |
+|                                             | Type      | Description                                                                          |
+|---------------------------------------------|-----------|--------------------------------------------------------------------------------------|
+| [`WorksheetErrors`](#worksheeterrors)       | `Variant` | Gets all of the cells that have errors in a Worksheet, i.e. `#DIV/0!`, `#REF!`, etc. |
+| [`WorkbookErrors`](#workbookerrors)         | `Variant` | Gets all of the errors in a Workbook, i.e. `#DIV/0!`, `#REF!`, etc.                  |
+| [`WorksheetHasErrors`](#worksheethaserrors) | `Boolean` | Checks if a Worksheet contains any errors, i.e. `#DIV/0!`, `#REF!`, etc.             |
+| [`UnhideAllSheets`](#unhideallsheets)       |           | Unhides all sheets in a Workbook.                                                    |
+| [`UnhideSheets`](#unhidesheets)             |           | Unhide Worksheet(s).                                                                 |
+| [`HideSheets`](#hidesheets)                 |           | Hide Worksheet(s).                                                                   |
 
 
 ---
 
 ### `WorksheetErrors`
 
-Gets all of the ranges (cells) that has errors in a Worksheet, i.e. `#DIV/0!`, `#REF!`, etc
+Gets all of the ranges (cells) that has errors in a Worksheet, i.e. `#DIV/0!`, `#REF!`, etc.
 
 **Parameters**
 - `ByRef WorkSh As Worksheet`
@@ -81,7 +81,7 @@ Sheet2        $B$3          Error 2007    =1/0
 
 ### `WorkbookErrors`
 
-Gets all of the errors in a Workbook, i.e. `#DIV/0!`, `#REF!`, etc
+Gets all of the errors in a Workbook, i.e. `#DIV/0!`, `#REF!`, etc.
 
 **Parameters**
 - `ByRef WorkSh As Worksheet`
@@ -138,7 +138,7 @@ Sheet2        $B$3          Error 2007    =1/0
 ### `WorksheetHasErrors`
 
 
-Checks if a Worksheet contains any errors, i.e. `#DIV/0!`, `#REF!`, etc
+Checks if a Worksheet contains any errors, i.e. `#DIV/0!`, `#REF!`, etc.
 
 **Parameters**
 - `ByRef WorkSh As Worksheet`

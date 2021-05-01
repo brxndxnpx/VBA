@@ -6,7 +6,7 @@ Option Explicit
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
 ''' Summary:
-'''     Checks if a Worksheet contains any errors, i.e. #DIV/0!, #REF!, etc
+'''     Checks if a Worksheet contains any errors, i.e. #DIV/0!, #REF!, etc.
 ''' Parameters:
 '''     ByRef WorkSh As Worksheet: The worksheet to examine.
 ''' Returns:
@@ -17,7 +17,7 @@ End Function
 
 
 ''' Summary:
-'''     Gets all of the ranges (cells) that has errors in a Worksheet, i.e. #DIV/0!, #REF!, etc
+'''     Gets all of the ranges (cells) that has errors in a Worksheet, i.e. #DIV/0!, #REF!, etc.
 ''' Parameters:
 '''     ByRef WorkSh As Worksheet: The Worksheet to examine.
 '''     Optional ErrorContainer As Variant: The error container. You can reuse this container to append errors to it.
@@ -50,7 +50,7 @@ End Function
 
 
 ''' Summary:
-'''     Gets all of the errors in a Workbook, i.e. #DIV/0!, #REF!, etc
+'''     Gets all of the errors in a Workbook, i.e. #DIV/0!, #REF!, etc.
 ''' Parameters:
 '''     ByRef WorkSh As Worksheet: The worksheet to examine.
 ''' Returns:
