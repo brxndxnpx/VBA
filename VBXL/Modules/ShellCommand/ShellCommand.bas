@@ -7,13 +7,17 @@ Option Explicit
 
 ''' Summary:
 '''     Starts up an application or script and passes optional arguments
-Public Sub StartApplication(ByRef xAppName As String, ByVal xArgs As String, Optional ByVal xWindowStyle As VbAppWinStyle = vbMinimizedFocus)
-    If xArgs = vbNullString Then Shell xAppName, xWindowStyle Else: Shell xAppName & " " & xArgs, xWindowStyle
+Public Sub StartApplication(ByRef AppName As String, ByVal Args As String, Optional ByVal WindowStyle As VbAppWinStyle = vbMinimizedFocus)
+    If Args = vbNullString Then 
+        Shell AppName, WindowStyle 
+    Else
+        Shell AppName & " " & Args, WindowStyle
+    End If
 End Sub
 
 ''' Summary:
 '''     Starts up the file explorer application
-Public Sub StartFileExplorer(Optional ByVal xPath As String, Optional ByVal xWindowStyle As VbAppWinStyle = vbNormalFocus)
-    Shell "Explorer.exe" & " " & xPath, xWindowStyle
+Public Sub OpenFileExplorer(Optional ByVal Path As String, Optional ByVal WindowStyle As VbAppWinStyle = vbNormalFocus)
+    Shell "Explorer.exe" & " " & Path, WindowStyle
 End Sub
 
