@@ -51,3 +51,25 @@ Public Function CHARCOUNT(ByVal Source As String, ByVal Character As String) As 
     CHARCOUNT = Len(Source) - Len(Replace(Source, Character, ""))
 End Function
 
+
+''' Summary:
+'''     Checks if an object or value is in a list.
+''' Parameters:
+'''     ByRef Source As Variant: The object or value to check.
+'''     ParamArray Predicate() As Variant: The list to check if the object or value is contained in.
+''' Returns:
+'''     A Boolean; True if the object or value is contained in the list
+Public Function ISIN(ByRef Source As Variant, ParamArray Predicate() As Variant) As Boolean
+    Dim i As Long
+    Dim SearchObjects As Boolean
+    SearchObjects = IsObject(Source)
+    
+    For i = LBound(Predicate) To UBound(Predicate)
+        If SearchObjects And IsObject(Predicate(i)) Then
+            If Predicate(i) Is Source Then ISIN = True: Exit Function
+        Else
+            If Predicate(i) = Source Then ISIN = True: Exit Function
+        End If
+    Next
+End Function
+

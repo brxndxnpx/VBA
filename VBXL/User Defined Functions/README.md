@@ -2,11 +2,12 @@
 
 ## Functions
 
-|                           | Type     | Description                                  |
-|---------------------------|----------|----------------------------------------------|
-| [`QUOTE`](#quote)         | `String` | Quotes a text using the character provided.  |
-| [`REVERSE`](#reverse)     | `String` | Reverses text.                               |
-| [`CHARCOUNT`](#charcount) | `Long`   | Counts the number of characters in a string. |
+|                           | Type      | Description                                  |
+|---------------------------|-----------|----------------------------------------------|
+| [`QUOTE`](#quote)         | `String`  | Quotes a text using the character provided.  |
+| [`REVERSE`](#reverse)     | `String`  | Reverses text.                               |
+| [`CHARCOUNT`](#charcount) | `Long`    | Counts the number of characters in a string. |
+| [`ISIN`](#isin)           | `Boolean` | Checks if an object or value is in a list.   |
 
 
 ## `QUOTE`
@@ -204,7 +205,6 @@ Counts the number of characters in a string.
 
 <p align="center"><sub>VBA</sub></p>
 
-
 ```vb
 Public Sub Demo()
     Debug.Print CHARCOUNT("hello", "l")
@@ -224,4 +224,80 @@ End Sub
 ```
 
 ---
+
+## `ISIN`
+
+Checks if an object or value is in a list.
+
+Useful for preventing repeating formulas when using `AND` or `OR`.
+
+**Parameters**
+- `ByRef Source As Variant`
+    - The object or value to check.
+- `ParamArray Predicate() As Variant`
+    - The list to check if the object or value is contained in.
+
+**Returns**
+- `Boolean`: True if the object or value is contained in the list.
+
+
+### Usage
+
+Demonstrating how the `ISIN` function could be used.
+
+<p align="center"><sub>VBA</sub></p>
+
+```vb
+Public Sub Demo()
+    Dim Value As String
+    
+    ' A dummy string to demonstrate how the ISIN function could be used.
+    Value = "CM 233124 AACW"
+
+    Debug.Print "NOT Using ISIN"
+    If Left(Value, 2) = "DM" Or Left(Value, 2) = "DI" Or _
+        Left(Value, 2) = "CM" Or Left(Value, 2) = "SM" Then
+        Debug.Print True
+    Else
+        Debug.Print False
+    End If
+
+    Debug.Print
+    Debug.Print "Using ISIN"
+
+    ' You only have to write the LEFT function once instead of 4 times
+    If ISIN(Left(Value, 2), "DM", "DI", "CM", "SM") Then
+        Debug.Print True
+    Else
+        Debug.Print False
+    End If
+End Sub
+```
+
+
+<p align="center"><sub>Formula</sub></p>  
+
+```vb
+=ISIN("CM 233124 AACW", "DM", "DI", "CM", "SM")
+```
+
+<p align="center"><sub>Output</sub></p>  
+
+```
+True
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
